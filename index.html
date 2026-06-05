@@ -16,7 +16,6 @@
       --silver:#e2e8f0;
       --bronze:#b45309;
       --emerald:#34d399;
-      --danger:#ef4444;
     }
     *{box-sizing:border-box}
     body{
@@ -102,14 +101,12 @@
       font-weight:800;
       margin-top:8px;
     }
-
     .main{
       display:grid;
       grid-template-columns:1.2fr 1fr;
       gap:20px;
       margin-top:20px;
     }
-
     .podium{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
@@ -141,7 +138,6 @@
       font-size:34px;
       font-weight:900;
     }
-
     .ranking-list{
       display:flex;
       flex-direction:column;
@@ -206,7 +202,6 @@
       height:100%;
       border-radius:999px;
     }
-
     .side-list{
       display:flex;
       flex-direction:column;
@@ -247,13 +242,11 @@
       margin:0 0 10px 0;
       line-height:1.5;
     }
-
     .footer-note{
       margin-top:18px;
       font-size:13px;
       color:var(--muted);
     }
-
     @media (max-width: 990px){
       .grid3,.main,.podium{
         grid-template-columns:1fr;
@@ -271,7 +264,7 @@
         <div class="chip">🏆 House of Connect • Live Scoreboard</div>
         <h1>Finance House Leaderboard</h1>
         <div class="sub">
-          Live ranking, top 3 podium, recent submissions, and house rules.  
+          Live ranking, top 3 podium, recent submissions, and house rules.
           This page auto-refreshes every 30 seconds.
         </div>
       </div>
@@ -309,3 +302,143 @@
 
         <div class="card">
           <h3>📊 Leaderboard Ranking</h3>
+          <div class="muted" style="margin-bottom:14px;">Full ranking with progress bars</div>
+          <div id="ranking" class="ranking-list"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card" style="margin-bottom:18px;">
+          <h3>📝 Recent Submissions</h3>
+          <div class="muted" style="margin-bottom:14px;">Latest activities added into the score board</div>
+          <div id="recentSubmissions" class="side-list"></div>
+        </div>
+
+        <div class="card" style="margin-bottom:18px;">
+          <h3>📌 House Rules</h3>
+          <div class="muted" style="margin-bottom:14px;">Important scoring guidance</div>
+          <ol id="rules" class="rules"></ol>
+        </div>
+
+        <div class="card">
+          <h3>ℹ️ Scoring Notes</h3>
+          <div class="submission-meta">
+            Ice breaking game score uses the participant count as the score value.<br><br>
+            Theme activity score adds the value inside brackets from the participant score and executive score fields.<br><br>
+            This website reads a JSON data file and refreshes automatically.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      If the ranking does not change immediately after a form submission, wait for the next refresh and sync.
+    </div>
+  </div>
+
+  <script>
+    const DATA_URL = './data.json';
+
+    function shortName(name){
+      return String(name || '').replace(/^House of /i, '');
+    }
+
+    function rankHouses(houses){
+      return [...houses]
+        .sort((a,b) => Number(b.score || 0) - Number(a.score || 0) || String(a.name).localeCompare(String(b.name)))
+        .map((h,i) => ({...h, rank:i+1, short: h.short || shortName(h.name)}));
+    }
+
+    function podiumCard(house, place){
+      const badgeClass = place === 1 ? 'badge-gold' : place === 2 ? 'badge-silver' : 'badge-bronze';
+      const placeText = place === 1 ? '1st Place' : place === 2 ? '2nd Place' : '3rd Place';
+      const cardClass = place === 1 ? 'podium-card first' : 'podium-card';
+      return `
+        <div class="${cardClass}">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;">
+            <span class="badge ${badgeClass}">${placeText}</span>
+            <span class="house-dot" style="background:${house.color || '#94a3b8'};"></span>
+          </div>
+          <div>
+            <div style="font-size:24px;font-weight:800;margin-top:18px;">${house.short}</div>
+            <div class="muted" style="margin-top:6px;">${house.name}</div>
+          </div>
+          <div class="score">${house.score}</div>
+        </div>
+      `;
+    }
+
+    function render(data){
+      const ranked = rankHouses(data.houses || []);
+      const totalPoints = ranked.reduce((sum,h) => sum + Number(h.score || 0), 0);
+      const leader = ranked[0];
+      const maxScore = Math.max(...ranked.map(h => Number(h.score || 0)), 1);
+
+      document.getElementById('lastUpdated').textContent = data.lastUpdated || new Date().toLocaleString();
+      document.getElementById('leaderBox').textContent = leader ? `${leader.name} • ${leader.score} pts` : 'No data';
+      document.getElementById('totalPoints').textContent = totalPoints;
+      document.getElementById('houseCount').textContent = ranked.length;
+
+      const podiumOrder = [ranked[1], ranked[0], ranked[2]].filter(Boolean);
+      const podiumPlaces = [2,1,3];
+      document.getElementById('podium').innerHTML =
+        podiumOrder.map((h,idx) => podiumCard(h, podiumPlaces[idx])).join('');
+
+      document.getElementById('ranking').innerHTML = ranked.map(h => {
+        const pct = Math.max(10, Math.round((Number(h.score || 0) / maxScore) * 100));
+        return `
+          <div class="rank-item">
+            <div class="rank-top">
+              <div class="rank-num">${h.rank}</div>
+              <div class="house-dot" style="background:${h.color || '#94a3b8'};"></div>
+              <div class="house-meta">
+                <div class="house-name">${h.name}</div>
+                <div class="house-short">${h.short}</div>
+              </div>
+              <div class="points">
+                <strong>${h.score}</strong>
+                <div class="muted">points</div>
+              </div>
+            </div>
+            <div class="bar">
+              <div style="width:${pct}%;background:${h.color || '#94a3b8'};"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('recentSubmissions').innerHTML = (data.recentSubmissions || []).map(item => `
+        <div class="submission">
+          <div>
+            <div class="submission-title">${item.house}</div>
+            <div class="submission-meta">
+              ${item.activity || ''}<br>
+              Submitted by ${item.by || '—'}
+            </div>
+          </div>
+          <div class="plus">+${item.points}</div>
+        </div>
+      `).join('');
+
+      document.getElementById('rules').innerHTML =
+        (data.houseRules || []).map(rule => `<li>${rule}</li>`).join('');
+    }
+
+    async function loadData(){
+      try{
+        const res = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
+        if(!res.ok) throw new Error('Failed to load data.json: ' + res.status);
+        const data = await res.json();
+        render(data);
+      }catch(err){
+        console.error(err);
+        document.getElementById('leaderBox').textContent = 'Unable to load scoreboard data';
+        document.getElementById('lastUpdated').textContent = 'Check data.json path';
+      }
+    }
+
+    loadData();
+    setInterval(loadData, 30000);
+  </script>
+</body>
+</html>
