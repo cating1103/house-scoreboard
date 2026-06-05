@@ -1,0 +1,12 @@
+{
+  "houses": [
+    { "name": "House of Fantasy", "score": 63 },
+    { "name": "House of Adventure", "score": 49 },
+    { "name": "House of Grizzly Gulch", "score": 41 },
+    { "name": "House of Frozen", "score": 29 },
+    { "name": "House of Main Street", "score": 14 },
+    { "name": "House of Tomorrow", "score": 14 },
+    { "name": "House of Mystic Point", "score": 12 },
+    { "name": "House of Toystory", "score": 11 }
+  ]
+}
