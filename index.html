@@ -24,6 +24,8 @@
       --blue:#60a5fa;
       --red:#ef4444;
       --lime:#84cc16;
+      --indigo:#6366f1;
+      --teal:#14b8a6;
     }
 
     *{box-sizing:border-box}
@@ -82,6 +84,7 @@
       line-height:1.02;
       letter-spacing:-0.03em;
       color:#111827;
+      text-shadow:0 0 24px rgba(255,255,255,.18);
     }
 
     .sub{
@@ -113,6 +116,192 @@
       color:#111827;
     }
 
+    /* Countdown + announcement */
+    .top-banner{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:1.3fr 1fr;
+      gap:16px;
+    }
+
+    .countdown-card,
+    .announcement-card{
+      border-radius:28px;
+      padding:22px;
+      background:#ffffff;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    .countdown-card{
+      background:linear-gradient(135deg, #fff7cc, #fff1f2, #ffffff);
+      border:1px solid #fcd34d;
+    }
+
+    .announcement-card{
+      background:linear-gradient(135deg, #eef2ff, #f5f3ff, #ffffff);
+      border:1px solid #c7d2fe;
+    }
+
+    .banner-title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:20px;
+      font-weight:900;
+      color:#111827;
+      margin-bottom:10px;
+    }
+
+    .banner-desc{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .countdown-grid{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:12px;
+    }
+
+    .count-box{
+      background:#ffffff;
+      border:1px solid #fde68a;
+      border-radius:18px;
+      padding:14px 10px;
+      text-align:center;
+      box-shadow:0 8px 18px rgba(250,204,21,.12);
+    }
+
+    .count-number{
+      font-size:34px;
+      font-weight:900;
+      color:#92400e;
+      line-height:1;
+      letter-spacing:-0.03em;
+    }
+
+    .count-label{
+      margin-top:6px;
+      font-size:12px;
+      color:#6b7280;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .pill-group{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+      color:#374151;
+      background:#ffffff;
+      border:1px solid #ddd6fe;
+      box-shadow:0 6px 16px rgba(99,102,241,.08);
+    }
+
+    /* Timetable */
+    .schedule-card{
+      margin-top:18px;
+      background:#ffffff;
+      border:1px solid var(--border);
+      border-radius:30px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .schedule-header{
+      text-align:center;
+      font-size:34px;
+      font-weight:900;
+      letter-spacing:-0.03em;
+      color:#ffffff;
+      padding:18px 20px;
+      border-radius:24px;
+      background:linear-gradient(135deg, #5eead4, #2563eb);
+      margin-bottom:18px;
+    }
+
+    .schedule-grid{
+      display:grid;
+      grid-template-columns:1.1fr 0.7fr 1.4fr;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid #d1d5db;
+    }
+
+    .schedule-cell{
+      padding:18px 16px;
+      border-right:1px solid rgba(75,85,99,.30);
+      border-bottom:1px solid rgba(75,85,99,.30);
+      font-weight:700;
+      font-size:14px;
+      line-height:1.45;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+
+    .schedule-grid .schedule-cell:nth-child(3n){
+      border-right:none;
+    }
+
+    .schedule-month{
+      color:#ffffff;
+      background:linear-gradient(135deg, #4f46e5, #1d4ed8);
+      font-size:16px;
+    }
+
+    .schedule-activity{
+      color:#ffffff;
+      background:linear-gradient(135deg, #06b6d4, #14b8a6);
+      font-size:16px;
+    }
+
+    .schedule-activity.battle{
+      background:linear-gradient(135deg, #34d399, #10b981);
+      color:#064e3b;
+      font-size:18px;
+      font-weight:900;
+    }
+
+    .schedule-activity.townhall{
+      background:linear-gradient(135deg, #0ea5e9, #06b6d4);
+      color:#ffffff;
+      font-size:18px;
+      font-weight:900;
+    }
+
+    .schedule-note{
+      background:linear-gradient(135deg, #fde68a, #fef3c7);
+      color:#111827;
+      font-weight:700;
+    }
+
+    .schedule-note.blue{
+      background:linear-gradient(135deg, #60a5fa, #4f46e5);
+      color:#ffffff;
+    }
+
+    .schedule-note.teal{
+      background:linear-gradient(135deg, #22d3ee, #0891b2);
+      color:#ffffff;
+    }
+
+    /* Stats */
     .grid3{
       margin-top:18px;
       display:grid;
@@ -163,6 +352,7 @@
       border:1px solid #f9a8d4;
     }
 
+    /* Main layout */
     .main{
       margin-top:20px;
       display:grid;
@@ -170,6 +360,7 @@
       gap:20px;
     }
 
+    /* Podium */
     .podium{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
@@ -251,6 +442,7 @@
       letter-spacing:-0.03em;
     }
 
+    /* Ranking */
     .ranking-list{
       display:flex;
       flex-direction:column;
@@ -335,6 +527,7 @@
       box-shadow:0 0 16px rgba(0,0,0,.10);
     }
 
+    /* Right side */
     .side-list{
       display:flex;
       flex-direction:column;
@@ -385,6 +578,37 @@
       border:1px solid #c7d2fe;
     }
 
+    .battle-card{
+      margin-top:18px;
+      background:linear-gradient(135deg, #fff1f2, #ffffff);
+      border:1px solid #fbcfe8;
+    }
+
+    .battle-title{
+      font-size:22px;
+      font-weight:900;
+      margin-top:8px;
+      color:#9d174d;
+    }
+
+    .battle-desc{
+      margin-top:10px;
+      font-size:14px;
+      line-height:1.6;
+      color:var(--muted);
+    }
+
+    .battle-tag{
+      display:inline-block;
+      margin-top:12px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:linear-gradient(135deg, #f472b6, #ec4899);
+      color:#ffffff;
+      font-weight:800;
+      box-shadow:0 8px 18px rgba(236,72,153,.22);
+    }
+
     ol.rules{
       margin:0;
       padding-left:20px;
@@ -402,10 +626,13 @@
       font-size:13px;
     }
 
-    @media (max-width: 990px){
+    @media (max-width: 1100px){
+      .top-banner,
       .grid3,
       .main,
-      .podium{
+      .podium,
+      .countdown-grid,
+      .schedule-grid{
         grid-template-columns:1fr;
       }
 
@@ -416,17 +643,23 @@
       .podium-card.first{
         transform:none;
       }
+
+      .schedule-grid .schedule-cell{
+        border-right:none;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <!-- HERO -->
     <section class="hero">
       <div>
         <div class="chip">🏆 House of Connect • Live Scoreboard</div>
         <h1>Finance House Leaderboard</h1>
         <div class="sub">
-          Live ranking, top 3 podium, recent submissions, and house rules.
+          Live ranking, top 3 podium, recent submissions, and house rules.  
+          Track your house progress, stay tuned for the next battle, and don’t miss the theme activity deadline.
         </div>
       </div>
 
@@ -436,6 +669,91 @@
       </div>
     </section>
 
+    <!-- TOP COUNTDOWN + ANNOUNCEMENT -->
+    <section class="top-banner">
+      <div class="countdown-card">
+        <div class="banner-title">⏳ “20” Theme Activities Countdown</div>
+        <div class="banner-desc">
+          Submit your <strong>“20” theme activities</strong> before <strong>June 30</strong>.  
+          New theme activities will continue in <strong>July</strong> and <strong>August</strong>.
+        </div>
+
+        <div class="countdown-grid">
+          <div class="count-box">
+            <div class="count-number" id="days">--</div>
+            <div class="count-label">Days</div>
+          </div>
+          <div class="count-box">
+            <div class="count-number" id="hours">--</div>
+            <div class="count-label">Hours</div>
+          </div>
+          <div class="count-box">
+            <div class="count-number" id="minutes">--</div>
+            <div class="count-label">Minutes</div>
+          </div>
+          <div class="count-box">
+            <div class="count-number" id="seconds">--</div>
+            <div class="count-label">Seconds</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="announcement-card">
+        <div class="banner-title">📣 Activity Outlook</div>
+        <div class="banner-desc">
+          <strong>May–June:</strong> current “20” theme activities submission period.<br><br>
+          <strong>July:</strong> House Battle is coming soon.<br><br>
+          <strong>July–August:</strong> a new round of theme activities will launch.
+        </div>
+
+        <div class="pill-group">
+          <div class="pill">🎯 Submit before June 30</div>
+          <div class="pill">🔥 House Battle in July</div>
+          <div class="pill">✨ New themes in July & August</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMETABLE -->
+    <section class="schedule-card">
+      <div class="schedule-header">HOUSE ACTIVITY SCHEDULE</div>
+
+      <div class="schedule-grid">
+        <div class="schedule-cell schedule-month">Mid Apr</div>
+        <div class="schedule-cell schedule-activity">Ice breaking games</div>
+        <div class="schedule-cell schedule-note blue">Committee arrange</div>
+
+        <div class="schedule-cell schedule-month">May - June</div>
+        <div class="schedule-cell schedule-activity">Theme activities</div>
+        <div class="schedule-cell schedule-note">Committee provide theme for House design event</div>
+
+        <div class="schedule-cell schedule-month">July</div>
+        <div class="schedule-cell schedule-activity battle">House Battle</div>
+        <div class="schedule-cell schedule-note blue">Committee arrange</div>
+
+        <div class="schedule-cell schedule-month">July - Aug</div>
+        <div class="schedule-cell schedule-activity">Theme activities</div>
+        <div class="schedule-cell schedule-note">Committee provide theme for House design event</div>
+
+        <div class="schedule-cell schedule-month">Sep - Oct</div>
+        <div class="schedule-cell schedule-activity">Theme activities</div>
+        <div class="schedule-cell schedule-note">Committee provide theme for House design event</div>
+
+        <div class="schedule-cell schedule-month">Oct</div>
+        <div class="schedule-cell schedule-activity battle">House Battle</div>
+        <div class="schedule-cell schedule-note blue">Committee arrange</div>
+
+        <div class="schedule-cell schedule-month">Nov - Dec</div>
+        <div class="schedule-cell schedule-activity">Theme activities</div>
+        <div class="schedule-cell schedule-note">Committee provide theme for House design event</div>
+
+        <div class="schedule-cell schedule-month" style="background:linear-gradient(135deg,#0891b2,#06b6d4);">Dec</div>
+        <div class="schedule-cell schedule-activity townhall">Townhall</div>
+        <div class="schedule-cell schedule-note teal">Announce Winner of House</div>
+      </div>
+    </section>
+
+    <!-- TOP STATS -->
     <section class="grid3">
       <div class="card stat-leader">
         <h3>🏆 Current Leader</h3>
@@ -456,6 +774,7 @@
       </div>
     </section>
 
+    <!-- MAIN -->
     <section class="main">
       <div>
         <div class="card" style="margin-bottom:18px;">
@@ -492,11 +811,22 @@
             This website reads a JSON data file and refreshes automatically.
           </div>
         </div>
+
+        <!-- House Battle Corner BELOW scoring notes -->
+        <div class="card battle-card">
+          <h3>⚔️ House Battle Corner</h3>
+          <div class="battle-title">July House Battle is Coming Soon</div>
+          <div class="battle-desc">
+            Prepare your team for the next highlight event!  
+            The <strong>House Battle</strong> will launch in <strong>July</strong>, bringing more excitement, bigger competition, and a fresh chance to boost your house ranking.
+          </div>
+          <div class="battle-tag">🔥 Get ready for battle!</div>
+        </div>
       </div>
     </section>
 
     <div class="footer-note">
-      If the ranking does not change immediately after a form submission, wait for the next refresh and sync.
+      If the ranking does not change immediately after a manual JSON update, wait for the next refresh and sync.
     </div>
   </div>
 
@@ -615,8 +945,36 @@
       }
     }
 
+    // Countdown to June 30, 2026 23:59:59 HKT
+    function updateCountdown(){
+      const target = new Date('2026-06-30T23:59:59+08:00').getTime();
+      const now = new Date().getTime();
+      const distance = target - now;
+
+      if(distance <= 0){
+        document.getElementById('days').textContent = '0';
+        document.getElementById('hours').textContent = '0';
+        document.getElementById('minutes').textContent = '0';
+        document.getElementById('seconds').textContent = '0';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours;
+      document.getElementById('minutes').textContent = minutes;
+      document.getElementById('seconds').textContent = seconds;
+    }
+
     loadData();
+    updateCountdown();
+
     setInterval(loadData, 30000);
+    setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
