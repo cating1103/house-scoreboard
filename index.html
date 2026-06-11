@@ -19,9 +19,6 @@
       --yellow:#fde68a;
       --pink:#f9a8d4;
       --green:#86efac;
-      --cyan:#cffafe;
-      --orange:#fdba74;
-      --lavender:#e0e7ff;
       --soft-blue:#eff6ff;
       --white:#ffffff;
     }
@@ -105,7 +102,7 @@
       font-weight:800;
     }
 
-    /* TOP 3 CARDS */
+    /* TOP ROW */
     .top-banner{
       display:grid;
       grid-template-columns:1fr 1fr 1fr;
@@ -227,43 +224,6 @@
       font-size:13px;
     }
 
-    /* STATS */
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-      margin-top:20px;
-    }
-
-    .stat-leader{
-      background:#fef9c3;
-      border:1px solid #fcd34d;
-    }
-
-    .stat-total{
-      background:#cffafe;
-      border:1px solid #a5f3fc;
-    }
-
-    .stat-houses{
-      background:#fce7f3;
-      border:1px solid #f9a8d4;
-    }
-
-    .big{
-      font-size:40px;
-      font-weight:900;
-      margin-top:10px;
-      color:#111827;
-      letter-spacing:-0.03em;
-    }
-
-    .muted{
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.45;
-    }
-
     /* MAIN */
     .main{
       display:grid;
@@ -278,6 +238,7 @@
       grid-template-columns:repeat(3,1fr);
       gap:12px;
       align-items:end;
+      margin-top:12px;
     }
 
     .podium-card{
@@ -468,15 +429,17 @@
     .rules-card{
       background:#fef9c3;
       border:1px solid #fcd34d;
+      margin-top:18px;
     }
 
     .notes-card{
       background:#eff6ff;
       border:1px solid #bfdbfe;
+      margin-top:18px;
     }
 
     ol.rules{
-      margin:0;
+      margin:12px 0 0 0;
       padding-left:20px;
     }
 
@@ -494,7 +457,6 @@
 
     @media (max-width: 1100px){
       .top-banner,
-      .stats,
       .main,
       .podium{
         grid-template-columns:1fr;
@@ -589,34 +551,13 @@
       </div>
     </section>
 
-    <!-- STATS -->
-    <section class="stats">
-      <div class="card stat-leader">
-        <h3>🏆 Current Leader</h3>
-        <div class="muted">Top scoring house right now</div>
-        <div id="leaderBox" class="big">Loading...</div>
-      </div>
-
-      <div class="card stat-total">
-        <h3>📈 Total Points</h3>
-        <div class="muted">Combined score across all houses</div>
-        <div id="totalPoints" class="big">0</div>
-      </div>
-
-      <div class="card stat-houses">
-        <h3>🏠 Houses</h3>
-        <div class="muted">Teams in the event</div>
-        <div id="houseCount" class="big">0</div>
-      </div>
-    </section>
-
     <!-- MAIN -->
     <section class="main">
       <div>
         <div class="card" style="margin-bottom:18px;">
           <h3>🥇 Podium</h3>
           <div class="muted">Top three houses in spotlight view</div>
-          <div id="podium" class="podium" style="margin-top:14px;"></div>
+          <div id="podium" class="podium"></div>
         </div>
 
         <div class="card">
@@ -627,13 +568,13 @@
       </div>
 
       <div>
-        <div class="card" style="margin-bottom:18px;">
+        <div class="card">
           <h3>📝 Recent Submissions</h3>
           <div class="muted">Latest activities added into the score board</div>
           <div id="recentSubmissions" class="side-list"></div>
         </div>
 
-        <div class="card rules-card" style="margin-bottom:18px;">
+        <div class="card rules-card">
           <h3>📌 House Rules</h3>
           <div class="muted">Important scoring guidance</div>
           <ol id="rules" class="rules"></ol>
@@ -683,12 +624,10 @@
             <span class="badge ${badgeClass}">${placeText}</span>
             <span class="house-dot" style="background:${house.color || '#94a3b8'};"></span>
           </div>
-
           <div>
             <div class="podium-title">${house.short}</div>
             <div class="podium-sub">${house.name}</div>
           </div>
-
           <div class="score">${house.score}</div>
         </div>
       `;
@@ -696,24 +635,16 @@
 
     function render(data){
       const ranked = rankHouses(data.houses || []);
-      const totalPoints = ranked.reduce((sum,h) => sum + Number(h.score || 0), 0);
-      const leader = ranked[0];
       const maxScore = Math.max(...ranked.map(h => Number(h.score || 0)), 1);
 
       document.getElementById('lastUpdated').textContent =
         data.lastUpdated || new Date().toLocaleString();
 
-      document.getElementById('leaderBox').textContent =
-        leader ? `${leader.name}` : 'No data';
-
-      document.getElementById('totalPoints').textContent = totalPoints;
-      document.getElementById('houseCount').textContent = ranked.length;
-
-      const podiumOrder = [ranked[1], ranked[0], ranked[2]].filter(Boolean);
-      const podiumPlaces = [2,1,3];
-
       document.getElementById('podium').innerHTML =
-        podiumOrder.map((h,idx) => podiumCard(h, podiumPlaces[idx])).join('');
+        [ranked[1], ranked[0], ranked[2]].filter(Boolean).map((h,idx) => {
+          const places = [2,1,3];
+          return podiumCard(h, places[idx]);
+        }).join('');
 
       document.getElementById('ranking').innerHTML = ranked.map(h => {
         const pct = Math.max(10, Math.round((Number(h.score || 0) / maxScore) * 100));
@@ -790,13 +721,13 @@
         render(data);
       }catch(err){
         console.error(err);
-        document.getElementById('leaderBox').textContent = 'Unable to load scoreboard data';
         document.getElementById('lastUpdated').textContent = 'Check data.json path';
       }
     }
 
     loadData();
     updateCountdown();
+
     setInterval(loadData, 30000);
     setInterval(updateCountdown, 1000);
   </script>
