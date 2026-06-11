@@ -1,22 +1,22 @@
 {
-  "lastUpdated": "2026-06-05 11:45 HKT",
+  "lastUpdated": "2026-06-11 11:45 HKT",
   "houses": [
     { "name": "House of Fantasy", "score": 63, "color": "#8b5cf6" },
     { "name": "House of Adventure", "score": 49, "color": "#f59e0b" },
     { "name": "House of Grizzly Gulch", "score": 41, "color": "#10b981" },
     { "name": "House of Mystic Point", "score": 37, "color": "#ec4899" },
-    { "name": "House of Frozen", "score": 29, "color": "#38bdf8" },
-    { "name": "House of Main Street", "score": 14, "color": "#ef4444" },
+    { "name": "House of Frozen", "score": 31, "color": "#38bdf8" },
+    { "name": "House of Main Street", "score": 51, "color": "#ef4444" },
     { "name": "House of Tomorrow", "score": 14, "color": "#6366f1" },
     { "name": "House of Toystory", "score": 11, "color": "#84cc16" }
   ],
   "recentSubmissions": [
-    { "house": "House of Mystic Point", "points": 10, "activity": "20mins walk", "by": "John Tang" },
-    { "house": "House of Mystic Point", "points": 10, "activity": "Draw something together for 20mins", "by": "John Tang" },
-    { "house": "House of Mystic Point", "points": 5, "activity": "Made 20 with chicken wings bone and food cover", "by": "John Tang" },
-    { "house": "House of Grizzly Gulch", "points": 10, "activity": "20A Lucky Draw", "by": "Ken Ng" },
-    { "house": "House of Grizzly Gulch", "points": 10, "activity": "20A Ice Cream", "by": "Ken Ng" },
-    { "house": "House of Grizzly Gulch", "points": 10, "activity": "20A Photo Booth", "by": "Ken Ng" }
+    { "house": "House of Frozen", "points": 2, "activity": "20 mins artwork", "by": "Rosa Ip" },
+    { "house": "House of Main Street", "points": 2, "activity": "MS - 20 min wait time", "by": "Alvin Yuen" },
+    { "house": "House of Main Street", "points": 10, "activity": "MS - Lunch in 20A Theme", "by": "Alvin Yuen" },
+    { "house": "House of Main Street", "points": 10, "activity": "MS - 20A snacks after game", "by": "Alvin Yuen" },
+    { "house": "House of Main Street", "points": 15, "activity": "MS - 20A Ice-cream with Simon", "by": "Alvin Yuen" },
+    { "house": "House of Mystic Point", "points": 10, "activity": "20mins walk", "by": "John Tang" }
   ],
   "houseRules": [
     "No Photoshop edits allowed.",
@@ -24,3 +24,4 @@
     "Scores will only be awarded through form submission."
   ]
 }
+``
