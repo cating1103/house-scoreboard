@@ -6,26 +6,30 @@
   <title>Finance House Leaderboard</title>
   <style>
     :root{
+      --page-bg:#dbeafe;
+      --page-bg-dark:#bfdbfe;
       --text:#1f2937;
       --muted:#6b7280;
       --white:#ffffff;
-      --border:#e5e7eb;
-      --shadow:0 12px 30px rgba(31,41,55,.08);
+      --border:#d1d5db;
+      --shadow:0 12px 24px rgba(31,41,55,.08);
 
       --gold:#facc15;
-      --silver:#dbe2ea;
+      --silver:#e5e7eb;
       --bronze:#fb923c;
 
+      --blue:#2563eb;
+      --blue-soft:#eff6ff;
+      --blue-mid:#93c5fd;
+      --indigo:#6366f1;
       --cyan:#22d3ee;
       --pink:#f472b6;
-      --violet:#8b5cf6;
-      --orange:#fb923c;
       --green:#34d399;
-      --blue:#60a5fa;
+      --orange:#fb923c;
+      --yellow:#fde68a;
+      --teal:#14b8a6;
       --red:#ef4444;
       --lime:#84cc16;
-      --indigo:#6366f1;
-      --teal:#14b8a6;
     }
 
     *{box-sizing:border-box}
@@ -34,11 +38,7 @@
       margin:0;
       font-family:Inter, Segoe UI, Arial, sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(34,211,238,.22), transparent 28%),
-        radial-gradient(circle at top right, rgba(244,114,182,.18), transparent 24%),
-        radial-gradient(circle at bottom left, rgba(251,146,60,.18), transparent 22%),
-        linear-gradient(135deg, #f8fbff, #fdf2f8, #eff6ff);
+      background:var(--page-bg);
       min-height:100vh;
     }
 
@@ -56,12 +56,9 @@
       flex-wrap:wrap;
       border-radius:32px;
       padding:28px;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.88), rgba(255,255,255,.72)),
-        linear-gradient(135deg, rgba(34,211,238,.10), rgba(139,92,246,.08), rgba(244,114,182,.10));
-      border:1px solid rgba(255,255,255,.65);
-      box-shadow:0 20px 45px rgba(31,41,55,.10);
-      backdrop-filter:blur(8px);
+      background:#ffffff;
+      border:1px solid #cbd5e1;
+      box-shadow:var(--shadow);
     }
 
     .chip{
@@ -70,11 +67,11 @@
       gap:8px;
       font-size:12px;
       font-weight:700;
-      color:#92400e;
+      color:#1e3a8a;
       padding:8px 14px;
       border-radius:999px;
-      background:linear-gradient(135deg, #fef3c7, #fde68a);
-      box-shadow:0 8px 20px rgba(250,204,21,.25);
+      background:#dbeafe;
+      border:1px solid #93c5fd;
       margin-bottom:12px;
     }
 
@@ -83,8 +80,7 @@
       font-size:clamp(32px, 5vw, 64px);
       line-height:1.02;
       letter-spacing:-0.03em;
-      color:#111827;
-      text-shadow:0 0 24px rgba(255,255,255,.18);
+      color:#0f172a;
     }
 
     .sub{
@@ -99,8 +95,8 @@
       min-width:280px;
       border-radius:22px;
       padding:18px 20px;
-      background:linear-gradient(135deg, #ffffff, #f8fafc);
-      border:1px solid var(--border);
+      background:#eff6ff;
+      border:1px solid #93c5fd;
       box-shadow:var(--shadow);
     }
 
@@ -134,12 +130,12 @@
     }
 
     .countdown-card{
-      background:linear-gradient(135deg, #fff7cc, #fff1f2, #ffffff);
-      border:1px solid #fcd34d;
+      background:#fff7ed;
+      border:1px solid #fdba74;
     }
 
     .announcement-card{
-      background:linear-gradient(135deg, #eef2ff, #f5f3ff, #ffffff);
+      background:#eef2ff;
       border:1px solid #c7d2fe;
     }
 
@@ -168,17 +164,17 @@
 
     .count-box{
       background:#ffffff;
-      border:1px solid #fde68a;
+      border:1px solid #fed7aa;
       border-radius:18px;
       padding:14px 10px;
       text-align:center;
-      box-shadow:0 8px 18px rgba(250,204,21,.12);
+      box-shadow:0 6px 14px rgba(31,41,55,.06);
     }
 
     .count-number{
       font-size:34px;
       font-weight:900;
-      color:#92400e;
+      color:#9a3412;
       line-height:1;
       letter-spacing:-0.03em;
     }
@@ -206,10 +202,9 @@
       border-radius:999px;
       font-size:13px;
       font-weight:700;
-      color:#374151;
+      color:#1e3a8a;
       background:#ffffff;
-      border:1px solid #ddd6fe;
-      box-shadow:0 6px 16px rgba(99,102,241,.08);
+      border:1px solid #c7d2fe;
     }
 
     /* Timetable */
@@ -230,7 +225,7 @@
       color:#ffffff;
       padding:18px 20px;
       border-radius:24px;
-      background:linear-gradient(135deg, #5eead4, #2563eb);
+      background:#2563eb;
       margin-bottom:18px;
     }
 
@@ -239,13 +234,13 @@
       grid-template-columns:1.1fr 0.7fr 1.4fr;
       border-radius:22px;
       overflow:hidden;
-      border:1px solid #d1d5db;
+      border:1px solid #94a3b8;
     }
 
     .schedule-cell{
       padding:18px 16px;
-      border-right:1px solid rgba(75,85,99,.30);
-      border-bottom:1px solid rgba(75,85,99,.30);
+      border-right:1px solid #94a3b8;
+      border-bottom:1px solid #94a3b8;
       font-weight:700;
       font-size:14px;
       line-height:1.45;
@@ -261,44 +256,44 @@
 
     .schedule-month{
       color:#ffffff;
-      background:linear-gradient(135deg, #4f46e5, #1d4ed8);
+      background:#4f46e5;
       font-size:16px;
     }
 
     .schedule-activity{
       color:#ffffff;
-      background:linear-gradient(135deg, #06b6d4, #14b8a6);
+      background:#0ea5e9;
       font-size:16px;
     }
 
     .schedule-activity.battle{
-      background:linear-gradient(135deg, #34d399, #10b981);
+      background:#10b981;
       color:#064e3b;
       font-size:18px;
       font-weight:900;
     }
 
     .schedule-activity.townhall{
-      background:linear-gradient(135deg, #0ea5e9, #06b6d4);
+      background:#06b6d4;
       color:#ffffff;
       font-size:18px;
       font-weight:900;
     }
 
     .schedule-note{
-      background:linear-gradient(135deg, #fde68a, #fef3c7);
+      background:#fde68a;
       color:#111827;
       font-weight:700;
     }
 
     .schedule-note.blue{
-      background:linear-gradient(135deg, #60a5fa, #4f46e5);
+      background:#60a5fa;
       color:#ffffff;
     }
 
     .schedule-note.teal{
-      background:linear-gradient(135deg, #22d3ee, #0891b2);
-      color:#ffffff;
+      background:#22d3ee;
+      color:#0f172a;
     }
 
     /* Stats */
@@ -338,17 +333,17 @@
     }
 
     .stat-leader{
-      background:linear-gradient(135deg, #fff7cc, #ffffff);
-      border:1px solid #fde68a;
+      background:#fef9c3;
+      border:1px solid #fcd34d;
     }
 
     .stat-total{
-      background:linear-gradient(135deg, #cffafe, #ffffff);
-      border:1px solid #a5f3fc;
+      background:#cffafe;
+      border:1px solid #67e8f9;
     }
 
     .stat-houses{
-      background:linear-gradient(135deg, #fce7f3, #ffffff);
+      background:#fce7f3;
       border:1px solid #f9a8d4;
     }
 
@@ -376,7 +371,7 @@
       flex-direction:column;
       justify-content:space-between;
       box-shadow:var(--shadow);
-      border:1px solid rgba(255,255,255,.8);
+      border:1px solid #d1d5db;
     }
 
     .podium-card.first{
@@ -385,18 +380,17 @@
     }
 
     .podium-gold{
-      background:linear-gradient(180deg, #fff8cc, #fffdf3);
-      border-color:#fde68a;
-      box-shadow:0 18px 36px rgba(250,204,21,.22);
+      background:#fef9c3;
+      border-color:#fcd34d;
     }
 
     .podium-silver{
-      background:linear-gradient(180deg, #f8fafc, #ffffff);
-      border-color:#dbe2ea;
+      background:#f8fafc;
+      border-color:#cbd5e1;
     }
 
     .podium-bronze{
-      background:linear-gradient(180deg, #fff1e8, #ffffff);
+      background:#ffedd5;
       border-color:#fdba74;
     }
 
@@ -409,17 +403,17 @@
     }
 
     .badge-gold{
-      background:linear-gradient(135deg, #fde047, #facc15);
+      background:#facc15;
       color:#111827;
     }
 
     .badge-silver{
-      background:linear-gradient(135deg, #eef2f7, #cbd5e1);
+      background:#e5e7eb;
       color:#111827;
     }
 
     .badge-bronze{
-      background:linear-gradient(135deg, #fdba74, #ea580c);
+      background:#fb923c;
       color:#ffffff;
     }
 
@@ -454,7 +448,7 @@
       border:1px solid var(--border);
       border-radius:22px;
       padding:16px;
-      box-shadow:0 8px 22px rgba(31,41,55,.05);
+      box-shadow:0 8px 18px rgba(31,41,55,.04);
     }
 
     .rank-top{
@@ -470,10 +464,9 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      background:linear-gradient(135deg, #eef2ff, #f8fafc);
+      background:#eff6ff;
       color:#111827;
       font-weight:900;
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
     }
 
     .house-dot{
@@ -481,7 +474,7 @@
       height:14px;
       border-radius:999px;
       flex-shrink:0;
-      box-shadow:0 0 0 4px rgba(255,255,255,.9), 0 0 18px currentColor;
+      box-shadow:0 0 0 4px rgba(255,255,255,.9);
     }
 
     .house-meta{
@@ -518,13 +511,12 @@
       height:12px;
       border-radius:999px;
       overflow:hidden;
-      background:#eef2f7;
+      background:#e5e7eb;
     }
 
     .bar > div{
       height:100%;
       border-radius:999px;
-      box-shadow:0 0 16px rgba(0,0,0,.10);
     }
 
     /* Right side */
@@ -541,9 +533,9 @@
       align-items:flex-start;
       padding:16px;
       border-radius:20px;
-      background:linear-gradient(135deg, #ffffff, #fafaff);
+      background:#ffffff;
       border:1px solid var(--border);
-      box-shadow:0 8px 20px rgba(31,41,55,.05);
+      box-shadow:0 8px 18px rgba(31,41,55,.04);
     }
 
     .submission-title{
@@ -561,27 +553,26 @@
     .plus{
       border-radius:999px;
       padding:8px 12px;
-      background:linear-gradient(135deg, #86efac, #34d399);
+      background:#86efac;
       color:#064e3b;
       font-weight:900;
       white-space:nowrap;
-      box-shadow:0 8px 18px rgba(52,211,153,.20);
     }
 
     .rules-card{
-      background:linear-gradient(135deg, #fff7cc, #ffffff);
-      border:1px solid #fde68a;
+      background:#fef9c3;
+      border:1px solid #fcd34d;
     }
 
     .notes-card{
-      background:linear-gradient(135deg, #eef2ff, #ffffff);
+      background:#eef2ff;
       border:1px solid #c7d2fe;
     }
 
     .battle-card{
       margin-top:18px;
-      background:linear-gradient(135deg, #fff1f2, #ffffff);
-      border:1px solid #fbcfe8;
+      background:#fce7f3;
+      border:1px solid #f9a8d4;
     }
 
     .battle-title{
@@ -603,10 +594,9 @@
       margin-top:12px;
       padding:8px 14px;
       border-radius:999px;
-      background:linear-gradient(135deg, #f472b6, #ec4899);
+      background:#ec4899;
       color:#ffffff;
       font-weight:800;
-      box-shadow:0 8px 18px rgba(236,72,153,.22);
     }
 
     ol.rules{
@@ -747,7 +737,7 @@
         <div class="schedule-cell schedule-activity">Theme activities</div>
         <div class="schedule-cell schedule-note">Committee provide theme for House design event</div>
 
-        <div class="schedule-cell schedule-month" style="background:linear-gradient(135deg,#0891b2,#06b6d4);">Dec</div>
+        <div class="schedule-cell schedule-month" style="background:#0891b2;">Dec</div>
         <div class="schedule-cell schedule-activity townhall">Townhall</div>
         <div class="schedule-cell schedule-note teal">Announce Winner of House</div>
       </div>
