@@ -6,124 +6,172 @@
   <title>Finance House Leaderboard</title>
   <style>
     :root{
-      --bg1:#020617;
-      --bg2:#0f172a;
+      --bg1:#09090f;
+      --bg2:#111827;
+      --bg3:#312e81;
       --card:rgba(255,255,255,.08);
-      --cardBorder:rgba(255,255,255,.12);
+      --cardBorder:rgba(255,255,255,.14);
       --text:#ffffff;
-      --muted:#cbd5e1;
+      --muted:#d1d5db;
       --gold:#facc15;
-      --silver:#e2e8f0;
-      --bronze:#b45309;
+      --silver:#e5e7eb;
+      --bronze:#d97706;
       --emerald:#34d399;
+      --cyan:#22d3ee;
+      --pink:#f472b6;
+      --violet:#a78bfa;
+      --orange:#fb923c;
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
       font-family:Inter,Segoe UI,Arial,sans-serif;
       color:var(--text);
-      background:linear-gradient(135deg,var(--bg1),var(--bg2),#312e81);
+      background:
+        radial-gradient(circle at top left, rgba(34,211,238,.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(244,114,182,.15), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(251,146,60,.15), transparent 20%),
+        linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
       min-height:100vh;
     }
+
     .container{
       max-width:1280px;
       margin:0 auto;
       padding:24px;
     }
+
     .hero{
       display:flex;
       gap:16px;
       justify-content:space-between;
       align-items:flex-start;
-      border:1px solid var(--cardBorder);
-      background:rgba(255,255,255,.05);
-      border-radius:28px;
-      padding:24px;
-      backdrop-filter: blur(8px);
-      box-shadow:0 20px 40px rgba(0,0,0,.3);
+      border:1px solid rgba(255,255,255,.16);
+      background:
+        linear-gradient(135deg, rgba(34,211,238,.10), rgba(167,139,250,.08), rgba(244,114,182,.10)),
+        rgba(255,255,255,.05);
+      border-radius:30px;
+      padding:28px;
+      backdrop-filter: blur(10px);
+      box-shadow:
+        0 24px 48px rgba(0,0,0,.30),
+        inset 0 1px 0 rgba(255,255,255,.08);
       flex-wrap:wrap;
     }
+
     .chip{
       display:inline-flex;
       gap:8px;
       align-items:center;
       color:#fde68a;
-      border:1px solid rgba(250,204,21,.25);
-      background:rgba(250,204,21,.08);
+      border:1px solid rgba(250,204,21,.35);
+      background:linear-gradient(135deg, rgba(250,204,21,.15), rgba(251,191,36,.06));
       border-radius:999px;
-      padding:6px 12px;
+      padding:8px 14px;
       font-size:12px;
-      margin-bottom:10px;
+      margin-bottom:12px;
+      box-shadow:0 0 20px rgba(250,204,21,.12);
     }
+
     h1{
       margin:0;
-      font-size:clamp(28px,4vw,52px);
-      line-height:1.08;
+      font-size:clamp(28px,4vw,64px);
+      line-height:1.02;
+      letter-spacing:-0.02em;
+      text-shadow:0 0 24px rgba(255,255,255,.10), 0 0 40px rgba(167,139,250,.18);
     }
+
     .sub{
       color:var(--muted);
-      margin-top:10px;
+      margin-top:12px;
       max-width:760px;
+      font-size:16px;
+      line-height:1.55;
     }
+
     .updated{
-      border:1px solid var(--cardBorder);
-      background:rgba(0,0,0,.2);
-      border-radius:18px;
-      padding:14px 16px;
-      min-width:260px;
+      border:1px solid rgba(255,255,255,.14);
+      background:linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:20px;
+      padding:16px 18px;
+      min-width:280px;
       color:var(--muted);
       font-size:14px;
+      box-shadow:0 10px 30px rgba(0,0,0,.18);
     }
+
     .grid3{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
       gap:16px;
       margin-top:18px;
     }
+
     .card{
       border:1px solid var(--cardBorder);
-      background:var(--card);
-      border-radius:24px;
-      padding:18px;
-      backdrop-filter: blur(8px);
-      box-shadow:0 14px 28px rgba(0,0,0,.22);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.04)),
+        var(--card);
+      border-radius:26px;
+      padding:20px;
+      backdrop-filter: blur(10px);
+      box-shadow:
+        0 16px 34px rgba(0,0,0,.25),
+        inset 0 1px 0 rgba(255,255,255,.06);
     }
+
     .card h3{
       margin:0 0 10px 0;
       font-size:18px;
     }
+
     .muted{
       color:var(--muted);
       font-size:14px;
     }
+
     .big{
       font-size:40px;
-      font-weight:800;
-      margin-top:8px;
+      font-weight:900;
+      margin-top:10px;
+      letter-spacing:-0.02em;
     }
+
     .main{
       display:grid;
       grid-template-columns:1.2fr 1fr;
       gap:20px;
       margin-top:20px;
     }
+
     .podium{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
       gap:14px;
       align-items:end;
     }
+
     .podium-card{
-      border:1px solid var(--cardBorder);
+      border:1px solid rgba(255,255,255,.16);
       border-radius:24px;
-      background:linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.06));
+      background:linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
       padding:16px;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
       min-height:220px;
+      box-shadow:0 14px 24px rgba(0,0,0,.22);
     }
-    .podium-card.first{min-height:270px}
+
+    .podium-card.first{
+      min-height:270px;
+      box-shadow:
+        0 0 0 1px rgba(250,204,21,.28),
+        0 18px 35px rgba(250,204,21,.12);
+    }
+
     .badge{
       display:inline-block;
       padding:6px 10px;
@@ -131,29 +179,48 @@
       font-size:12px;
       font-weight:700;
     }
-    .badge-gold{background:var(--gold); color:#111827}
-    .badge-silver{background:var(--silver); color:#111827}
-    .badge-bronze{background:var(--bronze); color:#fff}
-    .score{
-      font-size:34px;
-      font-weight:900;
+
+    .badge-gold{
+      background:linear-gradient(135deg,#fde047,#facc15);
+      color:#111827;
     }
+
+    .badge-silver{
+      background:linear-gradient(135deg,#f8fafc,#cbd5e1);
+      color:#111827;
+    }
+
+    .badge-bronze{
+      background:linear-gradient(135deg,#fb923c,#b45309);
+      color:#fff;
+    }
+
+    .score{
+      font-size:36px;
+      font-weight:900;
+      letter-spacing:-0.02em;
+    }
+
     .ranking-list{
       display:flex;
       flex-direction:column;
-      gap:12px;
+      gap:14px;
     }
+
     .rank-item{
-      background:rgba(0,0,0,.2);
-      border:1px solid var(--cardBorder);
+      background:linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.14);
       border-radius:20px;
       padding:14px;
+      box-shadow:0 10px 24px rgba(0,0,0,.14);
     }
+
     .rank-top{
       display:flex;
       align-items:center;
       gap:12px;
     }
+
     .rank-num{
       width:42px;
       height:42px;
@@ -161,92 +228,114 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      background:rgba(255,255,255,.1);
+      background:linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.08));
       font-weight:800;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
     }
+
     .house-dot{
       width:14px;
       height:14px;
       border-radius:999px;
       flex-shrink:0;
+      box-shadow:0 0 14px currentColor;
     }
+
     .house-meta{
       flex:1;
       min-width:0;
     }
+
     .house-name{
       font-weight:700;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
     }
+
     .house-short{
       color:var(--muted);
       font-size:13px;
       margin-top:3px;
     }
+
     .points{
       text-align:right;
     }
+
     .points strong{
       font-size:28px;
     }
+
     .bar{
       height:12px;
-      background:rgba(255,255,255,.1);
+      background:rgba(255,255,255,.10);
       border-radius:999px;
       overflow:hidden;
       margin-top:12px;
     }
+
     .bar > div{
       height:100%;
       border-radius:999px;
+      box-shadow:0 0 18px rgba(255,255,255,.22);
     }
+
     .side-list{
       display:flex;
       flex-direction:column;
-      gap:10px;
+      gap:12px;
     }
+
     .submission{
-      background:rgba(0,0,0,.2);
-      border:1px solid var(--cardBorder);
+      background:linear-gradient(135deg, rgba(34,211,238,.08), rgba(167,139,250,.07), rgba(244,114,182,.07));
+      border:1px solid rgba(255,255,255,.14);
       border-radius:18px;
       padding:14px;
       display:flex;
       justify-content:space-between;
       gap:12px;
       align-items:flex-start;
+      box-shadow:0 10px 24px rgba(0,0,0,.14);
     }
+
     .submission-title{
       font-weight:700;
       margin-bottom:4px;
     }
+
     .submission-meta{
       color:var(--muted);
       font-size:13px;
-      line-height:1.45;
+      line-height:1.5;
     }
+
     .plus{
-      background:var(--emerald);
+      background:linear-gradient(135deg,#6ee7b7,#34d399);
       color:#052e16;
       border-radius:999px;
-      font-weight:800;
-      padding:7px 10px;
+      font-weight:900;
+      padding:8px 12px;
       white-space:nowrap;
+      box-shadow:0 8px 18px rgba(52,211,153,.24);
     }
+
     ol.rules{
       padding-left:20px;
       margin:0;
     }
+
     ol.rules li{
       margin:0 0 10px 0;
-      line-height:1.5;
+      line-height:1.6;
     }
+
     .footer-note{
       margin-top:18px;
       font-size:13px;
       color:var(--muted);
     }
+
     @media (max-width: 990px){
       .grid3,.main,.podium{
         grid-template-columns:1fr;
@@ -275,17 +364,19 @@
     </section>
 
     <section class="grid3">
-      <div class="card">
+      <div class="card" style="background:linear-gradient(135deg, rgba(250,204,21,.14), rgba(255,255,255,.05));">
         <h3>🏆 Current Leader</h3>
         <div class="muted">Top scoring house right now</div>
         <div id="leaderBox" class="big">Loading...</div>
       </div>
-      <div class="card">
+
+      <div class="card" style="background:linear-gradient(135deg, rgba(34,211,238,.14), rgba(255,255,255,.05));">
         <h3>📈 Total Points</h3>
         <div class="muted">Combined score across all houses</div>
         <div id="totalPoints" class="big">0</div>
       </div>
-      <div class="card">
+
+      <div class="card" style="background:linear-gradient(135deg, rgba(244,114,182,.14), rgba(255,255,255,.05));">
         <h3>🏠 Houses</h3>
         <div class="muted">Teams in the event</div>
         <div id="houseCount" class="big">0</div>
@@ -314,13 +405,13 @@
           <div id="recentSubmissions" class="side-list"></div>
         </div>
 
-        <div class="card" style="margin-bottom:18px;">
+        <div class="card" style="margin-bottom:18px; background:linear-gradient(135deg, rgba(251,191,36,.10), rgba(255,255,255,.05));">
           <h3>📌 House Rules</h3>
           <div class="muted" style="margin-bottom:14px;">Important scoring guidance</div>
           <ol id="rules" class="rules"></ol>
         </div>
 
-        <div class="card">
+        <div class="card" style="background:linear-gradient(135deg, rgba(34,211,238,.08), rgba(167,139,250,.08));">
           <h3>ℹ️ Scoring Notes</h3>
           <div class="submission-meta">
             Ice breaking game score uses the participant count as the score value.<br><br>
@@ -357,7 +448,7 @@
         <div class="${cardClass}">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;">
             <span class="badge ${badgeClass}">${placeText}</span>
-            <span class="house-dot" style="background:${house.color || '#94a3b8'};"></span>
+            <span class="house-dot" style="background:${house.color || '#94a3b8'}; color:${house.color || '#94a3b8'};"></span>
           </div>
           <div>
             <div style="font-size:24px;font-weight:800;margin-top:18px;">${house.short}</div>
@@ -387,10 +478,10 @@
       document.getElementById('ranking').innerHTML = ranked.map(h => {
         const pct = Math.max(10, Math.round((Number(h.score || 0) / maxScore) * 100));
         return `
-          <div class="rank-item">
+          <div class="rank-item" style="border-left:6px solid ${h.color || '#94a3b8'};">
             <div class="rank-top">
               <div class="rank-num">${h.rank}</div>
-              <div class="house-dot" style="background:${h.color || '#94a3b8'};"></div>
+              <div class="house-dot" style="background:${h.color || '#94a3b8'}; color:${h.color || '#94a3b8'};"></div>
               <div class="house-meta">
                 <div class="house-name">${h.name}</div>
                 <div class="house-short">${h.short}</div>
@@ -407,18 +498,21 @@
         `;
       }).join('');
 
-      document.getElementById('recentSubmissions').innerHTML = (data.recentSubmissions || []).map(item => `
-        <div class="submission">
-          <div>
-            <div class="submission-title">${item.house}</div>
-            <div class="submission-meta">
-              ${item.activity || ''}<br>
-              Submitted by ${item.by || '—'}
+      document.getElementById('recentSubmissions').innerHTML = (data.recentSubmissions || []).map(item => {
+        const houseColor = (data.houses || []).find(h => h.name === item.house)?.color || '#94a3b8';
+        return `
+          <div class="submission" style="border-left:6px solid ${houseColor};">
+            <div>
+              <div class="submission-title">${item.house}</div>
+              <div class="submission-meta">
+                ${item.activity || ''}<br>
+                Submitted by ${item.by || '—'}
+              </div>
             </div>
+            <div class="plus">+${item.points}</div>
           </div>
-          <div class="plus">+${item.points}</div>
-        </div>
-      `).join('');
+        `;
+      }).join('');
 
       document.getElementById('rules').innerHTML =
         (data.houseRules || []).map(rule => `<li>${rule}</li>`).join('');
