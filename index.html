@@ -2,35 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FAS+ House of Connect Leaderboard</title>
+
   <style>
     :root{
       --page-bg:#eaf4ff;
-      --page-bg-2:#dbeafe;
       --text:#1f2937;
       --muted:#64748b;
-      --white:#ffffff;
       --border:#cbd5e1;
       --shadow:0 12px 24px rgba(31,41,55,.08);
 
-      --gold:#facc15;
-      --silver:#e5e7eb;
-      --bronze:#fb923c;
+      --blue:#93c5fd;
+      --blue-dark:#60a5fa;
 
-      --blue:#60a5fa;
-      --blue-strong:#3b82f6;
-      --blue-soft:#eff6ff;
-      --blue-mid:#bfdbfe;
-      --indigo:#818cf8;
-      --cyan:#67e8f9;
-      --pink:#f9a8d4;
-      --green:#6ee7b7;
-      --orange:#fdba74;
       --yellow:#fde68a;
-      --teal:#5eead4;
-      --red:#fca5a5;
-      --lime:#bef264;
+      --pink:#f9a8d4;
+      --green:#86efac;
+      --cyan:#cffafe;
+      --orange:#fdba74;
+      --lavender:#e0e7ff;
+      --soft-blue:#eff6ff;
+      --white:#ffffff;
     }
 
     *{box-sizing:border-box}
@@ -38,28 +31,26 @@
     body{
       margin:0;
       font-family:Inter, Segoe UI, Arial, sans-serif;
-      color:var(--text);
       background:var(--page-bg);
-      min-height:100vh;
+      color:var(--text);
     }
 
     .container{
-      max-width:1280px;
-      margin:0 auto;
-      padding:24px;
+      max-width:1200px;
+      margin:auto;
+      padding:20px;
     }
 
     /* HERO */
     .hero{
+      background:var(--blue);
+      border:1px solid var(--blue-dark);
+      border-radius:24px;
+      padding:28px;
       display:flex;
-      gap:18px;
       justify-content:space-between;
       align-items:flex-start;
       flex-wrap:wrap;
-      border-radius:32px;
-      padding:28px;
-      background:#93c5fd;
-      border:1px solid #60a5fa;
       box-shadow:var(--shadow);
     }
 
@@ -79,76 +70,62 @@
 
     h1{
       margin:0;
-      font-size:clamp(30px, 5vw, 60px);
+      font-size:clamp(30px, 5vw, 58px);
       line-height:1.05;
       letter-spacing:-0.03em;
-      color:#ffffff;
+      color:white;
     }
 
     .sub{
       margin-top:12px;
       color:#eff6ff;
-      max-width:760px;
-      font-size:17px;
+      font-size:16px;
       line-height:1.55;
+      max-width:760px;
     }
 
     .updated{
-      min-width:280px;
-      border-radius:22px;
-      padding:18px 20px;
-      background:#60a5fa;
+      background:var(--blue-dark);
       border:1px solid #bfdbfe;
+      color:white;
+      padding:16px 18px;
+      border-radius:16px;
+      min-width:250px;
       box-shadow:var(--shadow);
     }
 
     .updated-label{
-      font-size:14px;
+      font-size:13px;
       color:#eff6ff;
-      margin-bottom:8px;
+      margin-bottom:6px;
     }
 
     .updated-value{
-      font-size:26px;
+      font-size:24px;
       font-weight:800;
-      color:#ffffff;
     }
 
-    /* COUNTDOWN + ANNOUNCEMENT */
+    /* TOP 3 CARDS */
     .top-banner{
-      margin-top:18px;
       display:grid;
-      grid-template-columns:1.3fr 1fr;
+      grid-template-columns:1fr 1fr 1fr;
       gap:16px;
+      margin-top:20px;
     }
 
-    .countdown-card,
-    .announcement-card{
-      border-radius:28px;
-      padding:22px;
-      background:#ffffff;
+    .card{
+      background:white;
       border:1px solid var(--border);
+      border-radius:20px;
+      padding:18px;
       box-shadow:var(--shadow);
     }
 
-    .countdown-card{
-      background:#fff7ed;
-      border:1px solid #fdba74;
-    }
-
-    .announcement-card{
-      background:#eff6ff;
-      border:1px solid #bfdbfe;
-    }
-
     .banner-title{
-      display:flex;
-      align-items:center;
-      gap:10px;
       font-size:20px;
       font-weight:900;
-      color:#111827;
       margin-bottom:10px;
+      color:#111827;
     }
 
     .banner-desc{
@@ -157,181 +134,105 @@
       line-height:1.6;
     }
 
+    /* Countdown */
+    .countdown-card{
+      background:#fff7ed;
+      border:1px solid #fdba74;
+    }
+
     .countdown-grid{
-      margin-top:14px;
-      display:grid;
-      grid-template-columns:repeat(4, minmax(0,1fr));
-      gap:12px;
+      display:flex;
+      gap:8px;
+      margin-top:12px;
     }
 
     .count-box{
-      background:#ffffff;
+      flex:1;
+      background:white;
       border:1px solid #fed7aa;
-      border-radius:18px;
-      padding:14px 10px;
+      border-radius:14px;
       text-align:center;
-      box-shadow:0 6px 14px rgba(31,41,55,.06);
+      padding:10px 6px;
     }
 
     .count-number{
-      font-size:34px;
+      font-size:22px;
       font-weight:900;
       color:#9a3412;
       line-height:1;
-      letter-spacing:-0.03em;
     }
 
     .count-label{
       margin-top:6px;
-      font-size:12px;
+      font-size:11px;
       color:#6b7280;
       text-transform:uppercase;
       letter-spacing:.08em;
+    }
+
+    /* Outlook */
+    .announcement-card{
+      background:#eff6ff;
+      border:1px solid #bfdbfe;
     }
 
     .pill-group{
       margin-top:14px;
       display:flex;
       flex-wrap:wrap;
-      gap:10px;
+      gap:8px;
     }
 
     .pill{
       display:inline-flex;
       align-items:center;
-      gap:8px;
-      padding:8px 12px;
+      gap:6px;
+      padding:7px 10px;
       border-radius:999px;
-      font-size:13px;
+      font-size:12px;
       font-weight:700;
       color:#1e40af;
-      background:#ffffff;
+      background:white;
       border:1px solid #bfdbfe;
     }
 
-    /* SCHEDULE */
-    .schedule-card{
-      margin-top:18px;
-      background:#ffffff;
-      border:1px solid var(--border);
-      border-radius:30px;
-      padding:22px;
-      box-shadow:var(--shadow);
+    /* House Battle */
+    .battle-card{
+      background:#fce7f3;
+      border:1px solid #f9a8d4;
     }
 
-    .schedule-header{
-      text-align:center;
-      font-size:34px;
+    .battle-title{
+      font-size:22px;
       font-weight:900;
-      letter-spacing:-0.03em;
-      color:#ffffff;
-      padding:18px 20px;
-      border-radius:24px;
-      background:#60a5fa;
-      margin-bottom:18px;
+      color:#9d174d;
+      margin-top:6px;
     }
 
-    .schedule-grid{
-      display:grid;
-      grid-template-columns:1.1fr 0.7fr 1.4fr;
-      border-radius:22px;
-      overflow:hidden;
-      border:1px solid #94a3b8;
-    }
-
-    .schedule-cell{
-      padding:18px 16px;
-      border-right:1px solid #94a3b8;
-      border-bottom:1px solid #94a3b8;
-      font-weight:700;
-      font-size:14px;
-      line-height:1.45;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-    }
-
-    .schedule-grid .schedule-cell:nth-child(3n){
-      border-right:none;
-    }
-
-    .schedule-month{
-      color:#ffffff;
-      background:#818cf8;
-      font-size:16px;
-    }
-
-    .schedule-activity{
-      color:#ffffff;
-      background:#67e8f9;
-      font-size:16px;
-    }
-
-    .schedule-activity.battle{
-      background:#6ee7b7;
-      color:#065f46;
-      font-size:18px;
-      font-weight:900;
-    }
-
-    .schedule-activity.townhall{
-      background:#5eead4;
-      color:#134e4a;
-      font-size:18px;
-      font-weight:900;
-    }
-
-    .schedule-note{
-      background:#fde68a;
-      color:#111827;
-      font-weight:700;
-    }
-
-    .schedule-note.blue{
-      background:#93c5fd;
-      color:#ffffff;
-    }
-
-    .schedule-note.teal{
-      background:#bfdbfe;
-      color:#1e3a8a;
-    }
-
-    /* TOP STATS */
-    .grid3{
-      margin-top:18px;
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:16px;
-    }
-
-    .card{
-      background:#ffffff;
-      border:1px solid var(--border);
-      border-radius:28px;
-      padding:22px;
-      box-shadow:var(--shadow);
-    }
-
-    .card h3{
-      margin:0 0 10px 0;
-      font-size:18px;
-      color:#111827;
-    }
-
-    .muted{
+    .battle-desc{
+      margin-top:10px;
       color:var(--muted);
       font-size:14px;
-      line-height:1.45;
+      line-height:1.6;
     }
 
-    .big{
-      font-size:42px;
-      font-weight:900;
+    .battle-tag{
+      display:inline-block;
       margin-top:12px;
-      letter-spacing:-0.03em;
-      color:#111827;
+      padding:8px 14px;
+      border-radius:999px;
+      background:#ec4899;
+      color:white;
+      font-weight:800;
+      font-size:13px;
+    }
+
+    /* STATS */
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:20px;
     }
 
     .stat-leader{
@@ -349,36 +250,50 @@
       border:1px solid #f9a8d4;
     }
 
+    .big{
+      font-size:40px;
+      font-weight:900;
+      margin-top:10px;
+      color:#111827;
+      letter-spacing:-0.03em;
+    }
+
+    .muted{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+    }
+
     /* MAIN */
     .main{
-      margin-top:20px;
       display:grid;
       grid-template-columns:1.2fr 1fr;
       gap:20px;
+      margin-top:20px;
     }
 
     /* PODIUM */
     .podium{
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:16px;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
       align-items:end;
     }
 
     .podium-card{
-      border-radius:24px;
-      padding:18px;
+      border-radius:18px;
+      padding:14px;
       min-height:220px;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
+      border:1px solid var(--border);
       box-shadow:var(--shadow);
-      border:1px solid #d1d5db;
     }
 
     .podium-card.first{
-      min-height:280px;
-      transform:translateY(-6px);
+      min-height:260px;
+      transform:translateY(-4px);
     }
 
     .podium-gold{
@@ -404,52 +319,41 @@
       font-weight:800;
     }
 
-    .badge-gold{
-      background:#facc15;
-      color:#111827;
-    }
-
-    .badge-silver{
-      background:#e5e7eb;
-      color:#111827;
-    }
-
-    .badge-bronze{
-      background:#fb923c;
-      color:#ffffff;
-    }
+    .badge-gold{ background:#facc15; color:#111827; }
+    .badge-silver{ background:#e5e7eb; color:#111827; }
+    .badge-bronze{ background:#fb923c; color:white; }
 
     .podium-title{
-      font-size:24px;
+      font-size:22px;
       font-weight:900;
       color:#111827;
     }
 
     .podium-sub{
-      color:var(--muted);
-      font-size:14px;
       margin-top:4px;
+      color:var(--muted);
+      font-size:13px;
     }
 
     .score{
-      font-size:38px;
+      font-size:36px;
       font-weight:900;
       color:#111827;
-      letter-spacing:-0.03em;
     }
 
     /* RANKING */
     .ranking-list{
       display:flex;
       flex-direction:column;
-      gap:14px;
+      gap:12px;
+      margin-top:12px;
     }
 
     .rank-item{
-      background:#ffffff;
+      background:white;
       border:1px solid var(--border);
-      border-radius:22px;
-      padding:16px;
+      border-radius:16px;
+      padding:14px;
       box-shadow:0 8px 18px rgba(31,41,55,.04);
     }
 
@@ -460,15 +364,15 @@
     }
 
     .rank-num{
-      width:44px;
-      height:44px;
+      width:42px;
+      height:42px;
       border-radius:999px;
       display:flex;
       align-items:center;
       justify-content:center;
       background:#eff6ff;
-      color:#111827;
       font-weight:900;
+      color:#111827;
     }
 
     .house-dot{
@@ -493,9 +397,9 @@
     }
 
     .house-short{
+      margin-top:4px;
       font-size:13px;
       color:var(--muted);
-      margin-top:4px;
     }
 
     .points{
@@ -503,17 +407,17 @@
     }
 
     .points strong{
-      font-size:30px;
-      letter-spacing:-0.03em;
+      font-size:28px;
+      font-weight:900;
       color:#111827;
     }
 
     .bar{
       margin-top:12px;
       height:12px;
+      background:#e5e7eb;
       border-radius:999px;
       overflow:hidden;
-      background:#e5e7eb;
     }
 
     .bar > div{
@@ -521,22 +425,22 @@
       border-radius:999px;
     }
 
-    /* RIGHT SIDE */
+    /* RECENT */
     .side-list{
       display:flex;
       flex-direction:column;
       gap:12px;
+      margin-top:12px;
     }
 
     .submission{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:14px;
       display:flex;
       justify-content:space-between;
       gap:12px;
-      align-items:flex-start;
-      padding:16px;
-      border-radius:20px;
-      background:#ffffff;
-      border:1px solid var(--border);
       box-shadow:0 8px 18px rgba(31,41,55,.04);
     }
 
@@ -547,16 +451,16 @@
     }
 
     .submission-meta{
+      color:var(--muted);
       font-size:13px;
       line-height:1.5;
-      color:var(--muted);
     }
 
     .plus{
-      border-radius:999px;
-      padding:8px 12px;
       background:#dcfce7;
       color:#065f46;
+      padding:8px 12px;
+      border-radius:999px;
       font-weight:900;
       white-space:nowrap;
     }
@@ -569,36 +473,6 @@
     .notes-card{
       background:#eff6ff;
       border:1px solid #bfdbfe;
-    }
-
-    .battle-card{
-      margin-top:18px;
-      background:#fce7f3;
-      border:1px solid #f9a8d4;
-    }
-
-    .battle-title{
-      font-size:22px;
-      font-weight:900;
-      margin-top:8px;
-      color:#9d174d;
-    }
-
-    .battle-desc{
-      margin-top:10px;
-      font-size:14px;
-      line-height:1.6;
-      color:var(--muted);
-    }
-
-    .battle-tag{
-      display:inline-block;
-      margin-top:12px;
-      padding:8px 14px;
-      border-radius:999px;
-      background:#ec4899;
-      color:#ffffff;
-      font-weight:800;
     }
 
     ol.rules{
@@ -614,17 +488,15 @@
 
     .footer-note{
       margin-top:18px;
-      color:var(--muted);
       font-size:13px;
+      color:var(--muted);
     }
 
     @media (max-width: 1100px){
       .top-banner,
-      .grid3,
+      .stats,
       .main,
-      .podium,
-      .countdown-grid,
-      .schedule-grid{
+      .podium{
         grid-template-columns:1fr;
       }
 
@@ -636,14 +508,16 @@
         transform:none;
       }
 
-      .schedule-grid .schedule-cell{
-        border-right:none;
+      .countdown-grid{
+        flex-wrap:wrap;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
+
     <!-- HERO -->
     <section class="hero">
       <div>
@@ -661,92 +535,62 @@
       </div>
     </section>
 
-    <!-- TOP COUNTDOWN + ANNOUNCEMENT -->
+    <!-- TOP ROW -->
     <section class="top-banner">
-      <div class="countdown-card">
-        <div class="banner-title">⏳ “20” Theme Activities Countdown</div>
+      <div class="card countdown-card">
+        <div class="banner-title">⏳ Countdown</div>
         <div class="banner-desc">
-          Submit your <strong>“20” theme activities</strong> before <strong>June 30</strong>.  
-          New theme activities will continue in <strong>July</strong> and <strong>August</strong>.
+          “20” Theme submission before <strong>June 30</strong>
         </div>
 
         <div class="countdown-grid">
           <div class="count-box">
-            <div class="count-number" id="days">--</div>
+            <div id="days" class="count-number">--</div>
             <div class="count-label">Days</div>
           </div>
           <div class="count-box">
-            <div class="count-number" id="hours">--</div>
+            <div id="hours" class="count-number">--</div>
             <div class="count-label">Hours</div>
           </div>
           <div class="count-box">
-            <div class="count-number" id="minutes">--</div>
-            <div class="count-label">Minutes</div>
+            <div id="minutes" class="count-number">--</div>
+            <div class="count-label">Min</div>
           </div>
           <div class="count-box">
-            <div class="count-number" id="seconds">--</div>
-            <div class="count-label">Seconds</div>
+            <div id="seconds" class="count-number">--</div>
+            <div class="count-label">Sec</div>
           </div>
         </div>
       </div>
 
-      <div class="announcement-card">
+      <div class="card announcement-card">
         <div class="banner-title">📣 Activity Outlook</div>
         <div class="banner-desc">
-          <strong>May–June:</strong> current “20” theme activities submission period.<br><br>
-          <strong>July:</strong> House Battle is coming soon.<br><br>
-          <strong>July–August:</strong> a new round of theme activities will launch.
+          <strong>Now:</strong> Theme Activities<br><br>
+          <strong>July:</strong> House Battle<br><br>
+          <strong>July–Aug:</strong> New Themes
         </div>
 
         <div class="pill-group">
           <div class="pill">🎯 Submit before June 30</div>
           <div class="pill">🔥 House Battle in July</div>
-          <div class="pill">✨ New themes in July & August</div>
+          <div class="pill">✨ New themes coming</div>
         </div>
       </div>
-    </section>
 
-    <!-- TIMETABLE -->
-    <section class="schedule-card">
-      <div class="schedule-header">HOUSE ACTIVITY SCHEDULE</div>
-
-      <div class="schedule-grid">
-        <div class="schedule-cell schedule-month">Mid Apr</div>
-        <div class="schedule-cell schedule-activity">Ice breaking games</div>
-        <div class="schedule-cell schedule-note blue">Committee arrange</div>
-
-        <div class="schedule-cell schedule-month">May - June</div>
-        <div class="schedule-cell schedule-activity">Theme activities</div>
-        <div class="schedule-cell schedule-note">Committee provide theme for House design event</div>
-
-        <div class="schedule-cell schedule-month">July</div>
-        <div class="schedule-cell schedule-activity battle">House Battle</div>
-        <div class="schedule-cell schedule-note blue">Committee arrange</div>
-
-        <div class="schedule-cell schedule-month">July - Aug</div>
-        <div class="schedule-cell schedule-activity">Theme activities</div>
-        <div class="schedule-cell schedule-note">Committee provide theme for House design event</div>
-
-        <div class="schedule-cell schedule-month">Sep - Oct</div>
-        <div class="schedule-cell schedule-activity">Theme activities</div>
-        <div class="schedule-cell schedule-note">Committee provide theme for House design event</div>
-
-        <div class="schedule-cell schedule-month">Oct</div>
-        <div class="schedule-cell schedule-activity battle">House Battle</div>
-        <div class="schedule-cell schedule-note blue">Committee arrange</div>
-
-        <div class="schedule-cell schedule-month">Nov - Dec</div>
-        <div class="schedule-cell schedule-activity">Theme activities</div>
-        <div class="schedule-cell schedule-note">Committee provide theme for House design event</div>
-
-        <div class="schedule-cell schedule-month" style="background:#7dd3fc;">Dec</div>
-        <div class="schedule-cell schedule-activity townhall">Townhall</div>
-        <div class="schedule-cell schedule-note teal">Announce Winner of House</div>
+      <div class="card battle-card">
+        <div class="banner-title">⚔️ House Battle</div>
+        <div class="battle-title">Coming in July 🔥</div>
+        <div class="battle-desc">
+          A new challenge is coming soon.  
+          Get ready to compete and earn more points for your house!
+        </div>
+        <div class="battle-tag">🚀 Prepare your team</div>
       </div>
     </section>
 
-    <!-- TOP STATS -->
-    <section class="grid3">
+    <!-- STATS -->
+    <section class="stats">
       <div class="card stat-leader">
         <h3>🏆 Current Leader</h3>
         <div class="muted">Top scoring house right now</div>
@@ -771,13 +615,13 @@
       <div>
         <div class="card" style="margin-bottom:18px;">
           <h3>🥇 Podium</h3>
-          <div class="muted" style="margin-bottom:14px;">Top three houses in spotlight view</div>
-          <div id="podium" class="podium"></div>
+          <div class="muted">Top three houses in spotlight view</div>
+          <div id="podium" class="podium" style="margin-top:14px;"></div>
         </div>
 
         <div class="card">
           <h3>📊 Leaderboard Ranking</h3>
-          <div class="muted" style="margin-bottom:14px;">Full ranking with progress bars</div>
+          <div class="muted">Full ranking with progress bars</div>
           <div id="ranking" class="ranking-list"></div>
         </div>
       </div>
@@ -785,13 +629,13 @@
       <div>
         <div class="card" style="margin-bottom:18px;">
           <h3>📝 Recent Submissions</h3>
-          <div class="muted" style="margin-bottom:14px;">Latest activities added into the score board</div>
+          <div class="muted">Latest activities added into the score board</div>
           <div id="recentSubmissions" class="side-list"></div>
         </div>
 
         <div class="card rules-card" style="margin-bottom:18px;">
           <h3>📌 House Rules</h3>
-          <div class="muted" style="margin-bottom:14px;">Important scoring guidance</div>
+          <div class="muted">Important scoring guidance</div>
           <ol id="rules" class="rules"></ol>
         </div>
 
@@ -803,22 +647,13 @@
             This website reads a JSON data file and refreshes automatically.
           </div>
         </div>
-
-        <div class="card battle-card">
-          <h3>⚔️ House Battle Corner</h3>
-          <div class="battle-title">July House Battle is Coming Soon</div>
-          <div class="battle-desc">
-            Prepare your team for the next highlight event!  
-            The <strong>House Battle</strong> will launch in <strong>July</strong>, bringing more excitement, bigger competition, and a fresh chance to boost your house ranking.
-          </div>
-          <div class="battle-tag">🔥 Get ready for battle!</div>
-        </div>
       </div>
     </section>
 
     <div class="footer-note">
       If the ranking does not change immediately after a manual JSON update, wait for the next refresh and sync.
     </div>
+
   </div>
 
   <script>
@@ -846,7 +681,7 @@
         <div class="${cardClass}">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;">
             <span class="badge ${badgeClass}">${placeText}</span>
-            <span class="house-dot" style="background:${house.color || '#94a3b8'}; color:${house.color || '#94a3b8'};"></span>
+            <span class="house-dot" style="background:${house.color || '#94a3b8'};"></span>
           </div>
 
           <div>
@@ -869,7 +704,7 @@
         data.lastUpdated || new Date().toLocaleString();
 
       document.getElementById('leaderBox').textContent =
-        leader ? `${leader.name} • ${leader.score} pts` : 'No data';
+        leader ? `${leader.name}` : 'No data';
 
       document.getElementById('totalPoints').textContent = totalPoints;
       document.getElementById('houseCount').textContent = ranked.length;
@@ -886,7 +721,7 @@
           <div class="rank-item" style="border-left:6px solid ${h.color || '#94a3b8'};">
             <div class="rank-top">
               <div class="rank-num">${h.rank}</div>
-              <div class="house-dot" style="background:${h.color || '#94a3b8'}; color:${h.color || '#94a3b8'};"></div>
+              <div class="house-dot" style="background:${h.color || '#94a3b8'};"></div>
               <div class="house-meta">
                 <div class="house-name">${h.name}</div>
                 <div class="house-short">${h.short}</div>
@@ -897,7 +732,7 @@
               </div>
             </div>
             <div class="bar">
-              <div style="width:${pct}%;background:${h.color || '#94a3b8'};"></div>
+              <div style="width:${pct}%; background:${h.color || '#94a3b8'};"></div>
             </div>
           </div>
         `;
@@ -962,7 +797,6 @@
 
     loadData();
     updateCountdown();
-
     setInterval(loadData, 30000);
     setInterval(updateCountdown, 1000);
   </script>
