@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-11 12:15 HKT",
+  "lastUpdated": "2026-06-11 12:30 HKT",
   "houses": [
     { "name": "House of Fantasy", "score": 63, "color": "#8b5cf6" },
     { "name": "House of Adventure", "score": 49, "color": "#f59e0b" },
@@ -8,15 +8,15 @@
     { "name": "House of Frozen", "score": 31, "color": "#38bdf8" },
     { "name": "House of Main Street", "score": 51, "color": "#ef4444" },
     { "name": "House of Tomorrow", "score": 39, "color": "#6366f1" },
-    { "name": "House of Toystory", "score": 11, "color": "#84cc16" }
+    { "name": "House of Toystory", "score": 48, "color": "#84cc16" }
   ],
   "recentSubmissions": [
-    { "house": "House of Tomorrow", "points": 10, "activity": "International Yoga Day in 20A Colors", "by": "Kay Lai" },
-    { "house": "House of Tomorrow", "points": 15, "activity": "20A Cast Party!", "by": "Kay Lai" },
-    { "house": "House of Frozen", "points": 2, "activity": "20 mins artwork", "by": "Rosa Ip" },
-    { "house": "House of Main Street", "points": 2, "activity": "MS - 20 min wait time", "by": "Alvin Yuen" },
-    { "house": "House of Main Street", "points": 10, "activity": "MS - Lunch in 20A Theme", "by": "Alvin Yuen" },
-    { "house": "House of Main Street", "points": 10, "activity": "MS - 20A snacks after game", "by": "Alvin Yuen" }
+    { "house": "House of Toystory", "points": 7, "activity": "Meet up executives - 20 seconds", "by": "Cilla Chung" },
+    { "house": "House of Toystory", "points": 5, "activity": "20 stickers collection", "by": "Cilla Chung" },
+    { "house": "House of Toystory", "points": 5, "activity": "The Infinity with 20", "by": "Cilla Chung" },
+    { "house": "House of Toystory", "points": 5, "activity": "20 Broccoli", "by": "Cilla Chung" },
+    { "house": "House of Toystory", "points": 5, "activity": "CM CocaCola", "by": "Cilla Chung" },
+    { "house": "House of Toystory", "points": 10, "activity": "20th Magical Party of All", "by": "Cilla Chung" }
   ],
   "houseRules": [
     "No Photoshop edits allowed.",
