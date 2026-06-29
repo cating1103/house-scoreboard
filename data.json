@@ -1,22 +1,22 @@
 {
-  "lastUpdated": "2026-06-11 13:15 HKT",
+  "lastUpdated": "2026-06-29 14:12 HKT",
   "houses": [
     { "name": "House of Fantasy", "score": 73, "color": "#8b5cf6" },
-    { "name": "House of Adventure", "score": 49, "color": "#f59e0b" },
+    { "name": "House of Adventure", "score": 54, "color": "#f59e0b" },
     { "name": "House of Grizzly Gulch", "score": 41, "color": "#10b981" },
     { "name": "House of Mystic Point", "score": 37, "color": "#ec4899" },
-    { "name": "House of Frozen", "score": 40, "color": "#38bdf8" },
+    { "name": "House of Frozen", "score": 71, "color": "#38bdf8" },
     { "name": "House of Main Street", "score": 51, "color": "#ef4444" },
     { "name": "House of Tomorrow", "score": 39, "color": "#6366f1" },
     { "name": "House of Toystory", "score": 55, "color": "#84cc16" }
   ],
   "recentSubmissions": [
-    { "house": "House of Toystory", "points": 7, "activity": "Support Simon during Backstage Market 20 Sec", "by": "Cilla Chung" },
-    { "house": "House of Fantasy", "points": 5, "activity": "20mins Lorcana Trial out", "by": "Nelson Wong" },
-    { "house": "House of Fantasy", "points": 5, "activity": "20mins Lorcana learning", "by": "Nelson Wong" },
-    { "house": "House of Frozen", "points": 2, "activity": "20 mins Happy Hour", "by": "Rosa Ip" },
-    { "house": "House of Frozen", "points": 7, "activity": "20 mins artwork", "by": "Rosa Ip" },
-    { "house": "House of Toystory", "points": 7, "activity": "Meet up executives - 20 seconds", "by": "Cilla Chung" }
+    { "house": "House of Adventure", "points": 5, "activity": "20 seconds of exercise", "by": "Tiffany Tsang" },
+    { "house": "House of Frozen", "points": 7, "activity": "20 sec quick chat with Josephine", "by": "Rosa Ip" },
+    { "house": "House of Frozen", "points": 2, "activity": "20mins career talk", "by": "Rosa Ip" },
+    { "house": "House of Frozen", "points": 5, "activity": "20 mins lunch with connect team", "by": "Rosa Ip" },
+    { "house": "House of Frozen", "points": 10, "activity": "20 mins lunch talk with Gil", "by": "Rosa Ip" },
+    { "house": "House of Frozen", "points": 7, "activity": "20 sec chat with Gil", "by": "Rosa Ip" }
   ],
   "houseRules": [
     "No Photoshop edits allowed.",
@@ -24,3 +24,4 @@
     "Scores will only be awarded through form submission."
   ]
 }
+
