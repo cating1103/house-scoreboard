@@ -18,7 +18,6 @@
 
       --yellow:#fde68a;
       --pink:#f9a8d4;
-      --green:#86efac;
       --soft-blue:#eff6ff;
       --white:#ffffff;
     }
@@ -38,7 +37,6 @@
       padding:20px;
     }
 
-    /* HERO */
     .hero{
       background:var(--blue);
       border:1px solid var(--blue-dark);
@@ -105,9 +103,10 @@
     /* TOP ROW */
     .top-banner{
       display:grid;
-      grid-template-columns:1fr 1fr 1fr;
+      grid-template-columns:0.9fr 1.2fr 0.9fr;
       gap:16px;
       margin-top:20px;
+      align-items:stretch;
     }
 
     .card{
@@ -128,7 +127,7 @@
     .banner-desc{
       color:var(--muted);
       font-size:14px;
-      line-height:1.6;
+      line-height:1.5;
     }
 
     /* Countdown */
@@ -167,30 +166,44 @@
       letter-spacing:.08em;
     }
 
-    /* Outlook */
-    .announcement-card{
-      background:#eff6ff;
-      border:1px solid #bfdbfe;
+    /* Compact Theme Guide */
+    .theme-guide-card{
+      background:#fff8dc;
+      border:1px solid #fbbf24;
     }
 
-    .pill-group{
-      margin-top:14px;
-      display:flex;
-      flex-wrap:wrap;
+    .guide-mini{
+      display:grid;
+      grid-template-columns:1fr 1fr;
       gap:8px;
+      margin-top:12px;
     }
 
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:7px 10px;
-      border-radius:999px;
-      font-size:12px;
+    .guide-chip{
+      background:#fde68a;
+      border:1px solid #f59e0b;
+      border-radius:12px;
+      padding:9px 10px;
+      font-size:13px;
+      line-height:1.35;
+    }
+
+    .guide-chip strong{
+      display:block;
+      color:#111827;
+      font-size:13px;
+      margin-bottom:2px;
+    }
+
+    .guide-note{
+      margin-top:12px;
+      font-size:13px;
+      color:#92400e;
       font-weight:700;
-      color:#1e40af;
-      background:white;
-      border:1px solid #bfdbfe;
+      background:#fff7ed;
+      border:1px solid #fdba74;
+      border-radius:12px;
+      padding:9px 10px;
     }
 
     /* House Battle */
@@ -232,7 +245,6 @@
       margin-top:20px;
     }
 
-    /* PODIUM */
     .podium{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -302,7 +314,6 @@
       color:#111827;
     }
 
-    /* RANKING */
     .ranking-list{
       display:flex;
       flex-direction:column;
@@ -386,7 +397,6 @@
       border-radius:999px;
     }
 
-    /* RECENT */
     .side-list{
       display:flex;
       flex-direction:column;
@@ -458,7 +468,8 @@
     @media (max-width: 1100px){
       .top-banner,
       .main,
-      .podium{
+      .podium,
+      .guide-mini{
         grid-template-columns:1fr;
       }
 
@@ -525,18 +536,23 @@
         </div>
       </div>
 
-      <div class="card announcement-card">
-        <div class="banner-title">📣 Activity Outlook</div>
+      <div class="card theme-guide-card">
+        <div class="banner-title">🎬 Theme Activities Guide</div>
         <div class="banner-desc">
-          <strong>July:</strong> House Battle<br><br>
-          <strong>July–Aug:</strong> PIXAR Theme<br><br>
-          <strong>Reminder:</strong> Submit before Aug 31
+          Pick one Pixar idea and submit photo / video proof.
         </div>
 
-        <div class="pill-group">
-          <div class="pill">🎯 Submit before Aug 31</div>
-          <div class="pill">🔥 House Battle in July</div>
-          <div class="pill">🎬 Pixar Theme</div>
+        <div class="guide-mini">
+          <div class="guide-chip"><strong>Pixar-Lunch</strong>Eat together + Pixar + group photo/video</div>
+          <div class="guide-chip"><strong>Pixar-Game</strong>Simple game + Pixar + photo/video</div>
+          <div class="guide-chip"><strong>Pixar Move</strong>Walk / stretch / exercise with Pixar</div>
+          <div class="guide-chip"><strong>Pixar-Look</strong>Dress with a Pixar element</div>
+          <div class="guide-chip"><strong>Pixar Artwork</strong>Create artwork with Pixar elements</div>
+          <div class="guide-chip"><strong>Pixar-Any</strong>Any Pixar theme + photo/video</div>
+        </div>
+
+        <div class="guide-note">
+          Reminder: House member should submit once after activity is completed.
         </div>
       </div>
 
@@ -544,7 +560,7 @@
         <div class="banner-title">⚔️ House Battle</div>
         <div class="battle-title">Coming in July 🔥</div>
         <div class="battle-desc">
-          House battle and extra challenge will announce in Townhall on July 9!  
+          A new challenge is coming soon.  
           Get ready to compete and earn more points for your house!
         </div>
         <div class="battle-tag">🚀 Prepare your team</div>
