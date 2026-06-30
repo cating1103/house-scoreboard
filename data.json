@@ -1,22 +1,22 @@
 {
-  "lastUpdated": "2026-06-29 20:31 HKT",
+  "lastUpdated": "2026-06-30 14:15 HKT",
   "houses": [
     { "name": "House of Fantasy", "score": 73, "color": "#8b5cf6" },
     { "name": "House of Adventure", "score": 54, "color": "#f59e0b" },
     { "name": "House of Grizzly Gulch", "score": 41, "color": "#10b981" },
     { "name": "House of Mystic Point", "score": 37, "color": "#ec4899" },
-    { "name": "House of Frozen", "score": 71, "color": "#38bdf8" },
+    { "name": "House of Frozen", "score": 83, "color": "#38bdf8" },
     { "name": "House of Main Street", "score": 61, "color": "#ef4444" },
     { "name": "House of Tomorrow", "score": 56, "color": "#6366f1" },
     { "name": "House of Toystory", "score": 55, "color": "#84cc16" }
   ],
   "recentSubmissions": [
+    { "house": "House of Frozen", "points": 5, "activity": "20mins World Cup review", "by": "Rosa Ip" },
+    { "house": "House of Frozen", "points": 7, "activity": "20sec chat with Marilynn", "by": "Rosa Ip" },
     { "house": "House of Tomorrow", "points": 7, "activity": "20 min painting!", "by": "Kay Lai" },
     { "house": "House of Tomorrow", "points": 5, "activity": "20 card games!", "by": "Kay Lai" },
     { "house": "House of Tomorrow", "points": 5, "activity": "20 min lunch", "by": "Kay Lai" },
-    { "house": "House of Main Street", "points": 10, "activity": "20 days of World Cup activity", "by": "Alvin Yuen" },
-    { "house": "House of Adventure", "points": 5, "activity": "20 seconds of exercise", "by": "Tiffany Tsang" },
-    { "house": "House of Frozen", "points": 7, "activity": "20 sec quick chat with Josephine", "by": "Rosa Ip" }
+    { "house": "House of Main Street", "points": 10, "activity": "20 days of World Cup activity (Set up the group and pick the choices 1 day before the world cup started, and it's 20 days on the 30th Jun, which is the deadline of theme 20 activity)", "by": "Alvin Yuen" }
   ],
   "houseRules": [
     "No Photoshop edits allowed.",
