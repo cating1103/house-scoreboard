@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2026-06-30 18:07 HKT",
+  "lastUpdated": "2026-07-01 10:40 HKT",
   "houses": [
     { "name": "House of Fantasy", "score": 75, "color": "#8b5cf6" },
-    { "name": "House of Adventure", "score": 54, "color": "#f59e0b" },
+    { "name": "House of Adventure", "score": 59, "color": "#f59e0b" },
     { "name": "House of Grizzly Gulch", "score": 41, "color": "#10b981" },
     { "name": "House of Mystic Point", "score": 37, "color": "#ec4899" },
     { "name": "House of Frozen", "score": 83, "color": "#38bdf8" },
@@ -11,12 +11,12 @@
     { "name": "House of Toystory", "score": 80, "color": "#84cc16" }
   ],
   "recentSubmissions": [
+    { "house": "House of Adventure", "points": 5, "activity": "20A lunch", "by": "Tiffany Tsang" },
     { "house": "House of Toystory", "points": 10, "activity": "$1 lucky draw happy moment in 20sec", "by": "Chung Cilla" },
     { "house": "House of Toystory", "points": 15, "activity": "KFC = Konnie Fas+ Celebration", "by": "Cilla Chung" },
     { "house": "House of Fantasy", "points": 2, "activity": "20 mins World Cup Highlights", "by": "Nelson Wong" },
     { "house": "House of Frozen", "points": 5, "activity": "20mins World Cup review", "by": "Rosa Ip" },
-    { "house": "House of Frozen", "points": 7, "activity": "20sec chat with Marilynn", "by": "Rosa Ip" },
-    { "house": "House of Tomorrow", "points": 7, "activity": "20 min painting!", "by": "Kay Lai" }
+    { "house": "House of Frozen", "points": 7, "activity": "20sec chat with Marilynn", "by": "Rosa Ip" }
   ],
   "houseRules": [
     "No Photoshop edits allowed.",
