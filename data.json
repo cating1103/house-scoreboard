@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-07-15 15:16 HKT",
+  "lastUpdated": "2026-07-15 16:32 HKT",
   "houses": [
     { "name": "House of Fantasy", "score": 135, "color": "#8b5cf6" },
     { "name": "House of Adventure", "score": 83, "color": "#f59e0b" },
-    { "name": "House of Grizzly Gulch", "score": 56, "color": "#10b981" },
+    { "name": "House of Grizzly Gulch", "score": 61, "color": "#10b981" },
     { "name": "House of Mystic Point", "score": 37, "color": "#ec4899" },
     { "name": "House of Frozen", "score": 127, "color": "#38bdf8" },
     { "name": "House of Main Street", "score": 81, "color": "#ef4444" },
@@ -11,12 +11,12 @@
     { "name": "House of Toystory", "score": 80, "color": "#84cc16" }
   ],
   "recentSubmissions": [
+    { "house": "House of Grizzly Gulch", "points": 5, "activity": "Pixar Puzzle", "by": "Ken Ng" },
     { "house": "House of Adventure", "points": 5, "activity": "House Battle 4th", "by": "Tiffany Tsang" },
     { "house": "House of Frozen", "points": 10, "activity": "House Battle 3rd", "by": "Tiffany Tsang" },
     { "house": "House of Fantasy", "points": 15, "activity": "House Battle 2nd", "by": "Tiffany Tsang" },
     { "house": "House of Main Street", "points": 20, "activity": "House Battle 1st", "by": "Tiffany Tsang" },
-    { "house": "House of Adventure", "points": 5, "activity": "Pixar puzzle together", "by": "Tiffany Tsang" },
-    { "house": "House of Frozen", "points": 5, "activity": "Lunch with Pixar outfits", "by": "Rosa Ip" }
+    { "house": "House of Adventure", "points": 5, "activity": "Pixar puzzle together", "by": "Tiffany Tsang" }
   ],
   "houseRules": [
     "No Photoshop edits allowed.",
