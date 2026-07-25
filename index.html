@@ -218,13 +218,6 @@
       margin-top:6px;
     }
 
-    .battle-desc{
-      margin-top:6px;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.45;
-    }
-
     .battle-results-compact{
       margin-top:12px;
       background:white;
@@ -253,37 +246,17 @@
       font-weight:900;
     }
 
-    .battle-gold{
-      background:#fef9c3;
-    }
+    .battle-gold{ background:#fef9c3; }
+    .battle-gold span{ color:#b45309; }
 
-    .battle-gold span{
-      color:#b45309;
-    }
+    .battle-silver{ background:#f8fafc; }
+    .battle-silver span{ color:#475569; }
 
-    .battle-silver{
-      background:#f8fafc;
-    }
+    .battle-bronze{ background:#ffedd5; }
+    .battle-bronze span{ color:#c2410c; }
 
-    .battle-silver span{
-      color:#475569;
-    }
-
-    .battle-bronze{
-      background:#ffedd5;
-    }
-
-    .battle-bronze span{
-      color:#c2410c;
-    }
-
-    .battle-fourth{
-      background:#eef2ff;
-    }
-
-    .battle-fourth span{
-      color:#4f46e5;
-    }
+    .battle-fourth{ background:#eef2ff; }
+    .battle-fourth span{ color:#4f46e5; }
 
     .results-divider{
       margin:14px 0 10px;
@@ -321,17 +294,9 @@
       font-weight:900;
     }
 
-    .score-high{
-      color:#065f46;
-    }
-
-    .score-mid{
-      color:#2563eb;
-    }
-
-    .score-low{
-      color:#6b7280;
-    }
+    .score-high{ color:#065f46; }
+    .score-mid{ color:#2563eb; }
+    .score-low{ color:#6b7280; }
 
     .battle-thanks{
       margin-top:12px;
@@ -436,6 +401,13 @@
       border-radius:16px;
       padding:14px;
       box-shadow:0 8px 18px rgba(31,41,55,.04);
+      cursor:pointer;
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+
+    .rank-item:hover{
+      transform:translateY(-2px);
+      box-shadow:0 12px 24px rgba(31,41,55,.10);
     }
 
     .rank-top{
@@ -475,6 +447,9 @@
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
+      text-decoration:underline;
+      text-decoration-style:dotted;
+      text-underline-offset:4px;
     }
 
     .house-short{
@@ -574,6 +549,123 @@
       color:var(--muted);
     }
 
+    /* Modal */
+    .modal-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(15,23,42,.55);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      z-index:999;
+    }
+
+    .modal-overlay.show{
+      display:flex;
+    }
+
+    .modal{
+      width:min(760px, 100%);
+      max-height:85vh;
+      overflow:auto;
+      background:white;
+      border-radius:22px;
+      box-shadow:0 24px 60px rgba(15,23,42,.28);
+      border:1px solid #e5e7eb;
+    }
+
+    .modal-header{
+      position:sticky;
+      top:0;
+      background:white;
+      border-bottom:1px solid #e5e7eb;
+      padding:18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      z-index:1;
+    }
+
+    .modal-title{
+      font-size:24px;
+      font-weight:900;
+      margin:0;
+      color:#111827;
+    }
+
+    .modal-subtitle{
+      margin-top:6px;
+      color:#64748b;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .modal-close{
+      border:none;
+      background:#f1f5f9;
+      color:#111827;
+      width:38px;
+      height:38px;
+      border-radius:999px;
+      font-size:20px;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    .modal-body{
+      padding:18px;
+    }
+
+    .history-list{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .history-item{
+      border:1px solid #e5e7eb;
+      border-left:6px solid #94a3b8;
+      border-radius:14px;
+      padding:12px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      background:#ffffff;
+    }
+
+    .history-title{
+      font-weight:800;
+      color:#111827;
+      margin-bottom:4px;
+    }
+
+    .history-meta{
+      font-size:13px;
+      color:#64748b;
+      line-height:1.45;
+    }
+
+    .history-points{
+      background:#dcfce7;
+      color:#065f46;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:900;
+      white-space:nowrap;
+      height:max-content;
+    }
+
+    .empty-history{
+      padding:16px;
+      background:#f8fafc;
+      border:1px dashed #cbd5e1;
+      border-radius:14px;
+      color:#64748b;
+      line-height:1.6;
+    }
+
     @media (max-width: 1100px){
       .top-banner,
       .main,
@@ -607,7 +699,7 @@
         <h1>FAS+ House of Connect Leaderboard</h1>
         <div class="sub">
           Live ranking, house standings, and Pixar challenge updates.
-          Congratulations to our July House Battle winners and keep earning points through Pixar activities!
+          Click any house in the ranking to view its submission history.
         </div>
       </div>
 
@@ -669,9 +761,7 @@
       <div class="card battle-card">
         <div class="banner-title">🏆 Results Hub</div>
 
-        <div class="battle-title">
-          July House Battle 🎉
-        </div>
+        <div class="battle-title">July House Battle 🎉</div>
 
         <div class="battle-results-compact">
           <div class="battle-row battle-gold">
@@ -761,7 +851,7 @@
 
         <div class="card">
           <h3>📊 Leaderboard Ranking</h3>
-          <div class="muted">Full ranking with progress bars</div>
+          <div class="muted">Click any house to view its submission history</div>
           <div id="ranking" class="ranking-list"></div>
         </div>
       </div>
@@ -795,8 +885,25 @@
 
   </div>
 
+  <!-- Modal -->
+  <div id="historyModal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <h2 id="modalTitle" class="modal-title">House History</h2>
+          <div id="modalSubtitle" class="modal-subtitle"></div>
+        </div>
+        <button class="modal-close" onclick="closeHistoryModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <div id="historyList" class="history-list"></div>
+      </div>
+    </div>
+  </div>
+
   <script>
     const DATA_URL = './data.json';
+    let fullData = null;
 
     function shortName(name){
       return String(name || '').replace(/^House of /i, '');
@@ -831,7 +938,61 @@
       `;
     }
 
+    function openHouseHistory(houseName){
+      if(!fullData) return;
+
+      const house = (fullData.houses || []).find(h => h.name === houseName);
+      const all = fullData.allSubmissions || fullData.submissions || fullData.recentSubmissions || [];
+
+      const houseSubmissions = all.filter(item => item.house === houseName);
+
+      document.getElementById('modalTitle').textContent = houseName;
+
+      document.getElementById('modalSubtitle').textContent =
+        `${house ? house.score : 0} total points • ${houseSubmissions.length} shown submission(s)`;
+
+      if(houseSubmissions.length === 0){
+        document.getElementById('historyList').innerHTML = `
+          <div class="empty-history">
+            No full submission history found for this house yet.<br><br>
+            To show all history, please add an <strong>allSubmissions</strong> section in data.json.
+            If data.json only has recentSubmissions, this popup can only show recent matching records.
+          </div>
+        `;
+      }else{
+        document.getElementById('historyList').innerHTML =
+          houseSubmissions.map(item => {
+            const color = house?.color || '#94a3b8';
+            return `
+              <div class="history-item" style="border-left-color:${color};">
+                <div>
+                  <div class="history-title">${item.activity || 'Activity submission'}</div>
+                  <div class="history-meta">
+                    Submitted by ${item.by || '—'}${item.date ? `<br>${item.date}` : ''}
+                  </div>
+                </div>
+                <div class="history-points">+${item.points || 0}</div>
+              </div>
+            `;
+          }).join('');
+      }
+
+      document.getElementById('historyModal').classList.add('show');
+    }
+
+    function closeHistoryModal(){
+      document.getElementById('historyModal').classList.remove('show');
+    }
+
+    document.getElementById('historyModal').addEventListener('click', function(e){
+      if(e.target.id === 'historyModal'){
+        closeHistoryModal();
+      }
+    });
+
     function render(data){
+      fullData = data;
+
       const ranked = rankHouses(data.houses || []);
       const maxScore = Math.max(...ranked.map(h => Number(h.score || 0)), 1);
 
@@ -847,13 +1008,13 @@
       document.getElementById('ranking').innerHTML = ranked.map(h => {
         const pct = Math.max(10, Math.round((Number(h.score || 0) / maxScore) * 100));
         return `
-          <div class="rank-item" style="border-left:6px solid ${h.color || '#94a3b8'};">
+          <div class="rank-item" onclick="openHouseHistory('${h.name.replace(/'/g, "\\'")}')" style="border-left:6px solid ${h.color || '#94a3b8'};">
             <div class="rank-top">
               <div class="rank-num">${h.rank}</div>
               <div class="house-dot" style="background:${h.color || '#94a3b8'};"></div>
               <div class="house-meta">
                 <div class="house-name">${h.name}</div>
-                <div class="house-short">${h.short}</div>
+                <div class="house-short">Click to view submission history</div>
               </div>
               <div class="points">
                 <strong>${h.score}</strong>
