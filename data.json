@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-25 16:30 HKT",
+  "lastUpdated": "2026-08-05 10:57 HKT",
   "houses": [
     {
       "name": "House of Fantasy",
@@ -28,7 +28,7 @@
     },
     {
       "name": "House of Main Street",
-      "score": 91,
+      "score": 96,
       "color": "#ef4444"
     },
     {
@@ -43,6 +43,12 @@
     }
   ],
   "recentSubmissions": [
+    {
+      "house": "House of Main Street",
+      "points": 5,
+      "activity": "Puzzle Time with Pixar theme",
+      "by": "Alvin Yuen"
+    },
     {
       "house": "House of Mystic Point",
       "points": 5,
@@ -72,15 +78,15 @@
       "points": 5,
       "activity": "World Cup Prediction - enrollment point",
       "by": "Tiffany Tsang"
-    },
-    {
-      "house": "House of Adventure",
-      "points": 20,
-      "activity": "World Cup Prediction - two correct finalist + correct result",
-      "by": "Tiffany Tsang"
     }
   ],
   "allSubmissions": [
+    {
+      "house": "House of Main Street",
+      "points": 5,
+      "activity": "Puzzle Time with Pixar theme",
+      "by": "Alvin Yuen"
+    },
     {
       "house": "House of Mystic Point",
       "points": 5,
