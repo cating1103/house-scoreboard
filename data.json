@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-05 10:57 HKT",
+  "lastUpdated": "2026-09-14 15:07 HKT",
   "houses": [
     {
       "name": "House of Fantasy",
@@ -8,7 +8,7 @@
     },
     {
       "name": "House of Adventure",
-      "score": 103,
+      "score": 113,
       "color": "#f59e0b"
     },
     {
@@ -44,6 +44,12 @@
   ],
   "recentSubmissions": [
     {
+      "house": "House of Adventure",
+      "points": 10,
+      "activity": "halloween deco lunch",
+      "by": "Tiffany Tsang"
+    },
+    {
       "house": "House of Main Street",
       "points": 5,
       "activity": "Puzzle Time with Pixar theme",
@@ -72,15 +78,15 @@
       "points": 10,
       "activity": "World Cup Prediction - one correct finalist",
       "by": "Tiffany Tsang"
-    },
-    {
-      "house": "House of Tomorrow",
-      "points": 5,
-      "activity": "World Cup Prediction - enrollment point",
-      "by": "Tiffany Tsang"
     }
   ],
   "allSubmissions": [
+    {
+      "house": "House of Adventure",
+      "points": 10,
+      "activity": "halloween deco lunch",
+      "by": "Tiffany Tsang"
+    },
     {
       "house": "House of Main Street",
       "points": 5,
