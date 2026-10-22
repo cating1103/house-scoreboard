@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAS+ House of Connect Leaderboard</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAS+ House of Connect Leaderboard</title>
+<style>
     :root{--bg:#eaf4ff;--text:#1f2937;--muted:#64748b;--border:#cbd5e1;--shadow:0 12px 24px rgba(31,41,55,.08);--blue:#93c5fd;--blue2:#60a5fa}
     *{box-sizing:border-box} body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}
     .container{max-width:1200px;margin:auto;padding:20px}.card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
@@ -21,95 +21,56 @@
     .submission,.history-item{background:#fff;border:1px solid var(--border);border-radius:16px;padding:14px;display:flex;justify-content:space-between;gap:12px}.submission-title,.history-title{font-weight:800;margin-bottom:4px}.submission-meta,.history-meta{color:var(--muted);font-size:13px;line-height:1.5}.plus,.history-points{background:#dcfce7;color:#065f46;padding:8px 12px;border-radius:999px;font-weight:900;white-space:nowrap;height:max-content}.rules-card{background:#fef9c3;border-color:#fcd34d;margin-top:18px}.notes-card{background:#eff6ff;border-color:#bfdbfe;margin-top:18px}ol.rules{padding-left:20px}ol.rules li{margin-bottom:10px;line-height:1.6}.footer-note{margin-top:18px;font-size:13px;color:var(--muted)}
     .modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:999}.modal-overlay.show{display:flex}.modal{width:min(760px,100%);max-height:85vh;overflow:auto;background:#fff;border-radius:22px;box-shadow:0 24px 60px rgba(15,23,42,.28)}.modal-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;padding:18px;display:flex;justify-content:space-between;gap:12px;z-index:1}.modal-title{font-size:24px;font-weight:900;margin:0}.modal-subtitle{margin-top:6px;color:var(--muted);font-size:14px}.modal-close{border:0;background:#f1f5f9;width:38px;height:38px;border-radius:50%;font-size:20px;font-weight:900;cursor:pointer}.modal-body{padding:18px}.empty-history{padding:16px;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:14px;color:var(--muted)}
     @media(max-width:1100px){.top-banner,.main,.podium,.guide-mini{grid-template-columns:1fr}.updated{width:100%}.podium-card.first{transform:none}.countdown-grid{flex-wrap:wrap}}
-  </style>
+  
+    .battle-desc{margin-top:8px;color:var(--muted);font-size:13px;line-height:1.5}
+    .battle-results-compact{margin-top:12px;background:#fff;border:1px solid #d8b4fe;border-radius:12px;overflow:hidden}
+    .battle-row{padding:9px 11px;font-size:13.5px;color:#374151;border-top:1px solid #e5e7eb;display:flex;align-items:center;gap:6px}
+    .battle-row:first-child{border-top:none}.battle-row strong{color:#111827;flex:1}.battle-row span{font-weight:900}
+    .battle-gold{background:#fef9c3}.battle-gold span{color:#b45309}
+    .battle-silver{background:#f8fafc}.battle-silver span{color:#475569}
+    .battle-bronze{background:#ffedd5}.battle-bronze span{color:#c2410c}
+    .battle-fourth{background:#eef2ff}.battle-fourth span{color:#4f46e5}
+    .battle-thanks{margin-top:12px;background:#faf5ff;border:1px solid #d8b4fe;border-radius:12px;padding:10px;color:#6b21a8;text-align:center;font-size:13px;font-weight:800;line-height:1.5}
+    .results-divider{height:1px;background:#d8b4fe;margin:14px 0 10px}
+    .extra-score-box{background:#fff7ed;border:1px solid #fdba74;border-radius:12px;padding:10px}
+    .extra-score-title{font-size:15px;font-weight:900;color:#9a3412;margin-bottom:8px}
+    .extra-score-row{display:flex;align-items:center;gap:6px;font-size:13px;line-height:1.8;color:#374151}
+    .extra-score-row strong{flex:1;color:#111827}.extra-score-row span{font-weight:900}
+    .score-high{color:#065f46}.score-mid{color:#2563eb}.score-low{color:#6b7280}
+</style>
 </head>
 <body>
 <div class="container">
-  <section class="hero"><div><div class="chip">🏆 House of Connect • Live Scoreboard</div><h1>FAS+ House of Connect Leaderboard</h1><div class="sub">Live ranking, house standings, and Halloween challenge updates. Click any house in the ranking to view its submission history.</div></div><div class="updated"><div class="updated-label">Last updated</div><div id="lastUpdated" class="updated-value">Loading...</div></div></section>
-
-  <section class="top-banner">
-    <div class="card countdown-card"><div class="banner-title">⏳ Countdown</div><div class="banner-desc"><strong>Halloween Theme</strong> runs from September to October. Countdown to the submission deadline on <strong>Oct 31</strong>.</div><div class="countdown-grid"><div class="count-box"><div id="days" class="count-number">--</div><div class="count-label">Days</div></div><div class="count-box"><div id="hours" class="count-number">--</div><div class="count-label">Hours</div></div><div class="count-box"><div id="minutes" class="count-number">--</div><div class="count-label">Min</div></div><div class="count-box"><div id="seconds" class="count-number">--</div><div class="count-label">Sec</div></div></div></div>
-
-    <div class="card theme-guide-card"><div class="banner-title">🎃 Halloween Activities Guide</div><div class="banner-desc">Pick one Halloween idea and submit photo or video proof.</div><div class="guide-mini"><div class="guide-chip"><strong>Halloween-Lunch</strong>Eat together as a House + include Halloween + group photo</div><div class="guide-chip"><strong>Halloween-Game</strong>Simple game + Halloween + photo or short video</div><div class="guide-chip"><strong>Halloween-Move</strong>Walk, stretch, or exercise together + group selfie</div><div class="guide-chip"><strong>Halloween-Look</strong>Dress up with a Halloween element + group photo</div><div class="guide-chip"><strong>Halloween Artwork</strong>Create artwork together + Halloween elements + artwork photo</div><div class="guide-chip"><strong>Halloween-Any</strong>Any activity your House can think of + group photo</div></div><div class="guide-note">Reminder: Assign one House member to submit after the activity is completed.</div></div>
-
-    <div class="card battle-card">
-
-  <div class="banner-title">🏆 Halloween House Battle Results</div>
-
-  <div class="battle-title">
-    Congratulations to All Houses! 🎉
-  </div>
-
-  <div class="battle-desc">
-    Thank you to all Houses for participating in the Halloween House Battle.
-  </div>
-
-  <div class="battle-results-compact">
-
-    <div class="battle-row battle-gold">
-      🥇 <strong>House of Adventure</strong>
-      <span>+20</span>
-    </div>
-
-    <div class="battle-row battle-silver">
-      🥈 <strong>House of Fantasy</strong>
-      <span>+15</span>
-    </div>
-
-    <div class="battle-row battle-bronze">
-      🥉 <strong>House of Toystory</strong>
-      <span>+10</span>
-    </div>
-
-    <div class="battle-row battle-fourth">
-      🎖️ <strong>House of Main Street</strong>
-      <span>+5</span>
-    </div>
-
-    <div class="battle-row battle-fourth">
-      🎖️ <strong>House of Mystic Point</strong>
-      <span>+5</span>
-    </div>
-
-  </div>
-
-  <div class="battle-thanks">
-    🎃 Halloween House Battle Complete
-  </div>
-
-  <div class="results-divider"></div>
-
-  <div class="extra-score-box">
-
-    <div class="extra-score-title">
-      🎉 Congratulations!
-    </div>
-
-    <div class="extra-score-row">
-      🏆 <strong>Champion</strong>
-      <span class="score-high">Adventure</span>
-    </div>
-
-    <div class="extra-score-row">
-      🥈 <strong>Runner-up</strong>
-      <span class="score-mid">Fantasy</span>
-    </div>
-
-    <div class="extra-score-row">
-      🥉 <strong>Third Place</strong>
-      <span class="score-low">Toystory</span>
-    </div>
-
-  </div>
-
+<section class="hero"><div><div class="chip">🏆 House of Connect • Live Scoreboard</div><h1>FAS+ House of Connect Leaderboard</h1><div class="sub">Live ranking, house standings, Halloween challenge updates, and Halloween House Battle results. Click any house in the ranking to view its submission history.</div></div><div class="updated"><div class="updated-label">Last updated</div><div class="updated-value" id="lastUpdated">Loading...</div></div></section>
+<section class="top-banner">
+<div class="card countdown-card"><div class="banner-title">⏳ Countdown</div><div class="banner-desc"><strong>Halloween Theme</strong> runs from September to October. Countdown to the submission deadline on <strong>Oct 31</strong>.</div><div class="countdown-grid"><div class="count-box"><div class="count-number" id="days">--</div><div class="count-label">Days</div></div><div class="count-box"><div class="count-number" id="hours">--</div><div class="count-label">Hours</div></div><div class="count-box"><div class="count-number" id="minutes">--</div><div class="count-label">Min</div></div><div class="count-box"><div class="count-number" id="seconds">--</div><div class="count-label">Sec</div></div></div></div>
+<div class="card theme-guide-card"><div class="banner-title">🎃 Halloween Activities Guide</div><div class="banner-desc">Pick one Halloween idea and submit photo or video proof.</div><div class="guide-mini"><div class="guide-chip"><strong>Halloween-Lunch</strong>Eat together as a House + include Halloween + group photo</div><div class="guide-chip"><strong>Halloween-Game</strong>Simple game + Halloween + photo or short video</div><div class="guide-chip"><strong>Halloween-Move</strong>Walk, stretch, or exercise together + group selfie</div><div class="guide-chip"><strong>Halloween-Look</strong>Dress up with a Halloween element + group photo</div><div class="guide-chip"><strong>Halloween Artwork</strong>Create artwork together + Halloween elements + artwork photo</div><div class="guide-chip"><strong>Halloween-Any</strong>Any activity your House can think of + group photo</div></div><div class="guide-note">Reminder: Assign one House member to submit after the activity is completed.</div></div>
+<div class="card battle-card">
+<div class="banner-title">🏆 Halloween House Battle Results</div>
+<div class="battle-title">Congratulations to All Houses! 🎉</div>
+<div class="battle-desc">Thank you to all Houses for participating in the Halloween House Battle and making the event a success.</div>
+<div class="battle-results-compact">
+<div class="battle-row battle-gold">🥇 <strong>House of Adventure</strong><span>+20</span></div>
+<div class="battle-row battle-silver">🥈 <strong>House of Fantasy</strong><span>+15</span></div>
+<div class="battle-row battle-bronze">🥉 <strong>House of Toystory</strong><span>+10</span></div>
+<div class="battle-row battle-fourth">🎖️ <strong>House of Main Street</strong><span>+5</span></div>
+<div class="battle-row battle-fourth">🎖️ <strong>House of Mystic Point</strong><span>+5</span></div>
 </div>
-
-  <section class="main"><div><div class="card" style="margin-bottom:18px"><h3>🥇 Podium</h3><div class="muted">Top three houses in spotlight view</div><div id="podium" class="podium"></div></div><div class="card"><h3>📊 Leaderboard Ranking</h3><div class="muted">Click any house to view its full submission history</div><div id="ranking" class="ranking-list"></div></div></div><div><div class="card"><h3>📝 Recent Submissions</h3><div class="muted">Latest activities added to the scoreboard</div><div id="recentSubmissions" class="side-list"></div></div><div class="card rules-card"><h3>📌 House Rules</h3><div class="muted">Important scoring guidance</div><ol id="rules" class="rules"></ol></div><div class="card notes-card"><h3>ℹ️ Scoring Notes</h3><div class="submission-meta">Ice breaking game score uses the participant count as the score value.<br><br>Theme activity score adds the value inside brackets from the participant and executive score fields.</div></div></div></section>
-  <div class="footer-note">If the ranking does not change immediately after a manual JSON update, wait for the next refresh and sync.</div>
+<div class="battle-thanks">🎃 Halloween House Battle Complete</div>
+<div class="results-divider"></div>
+<div class="extra-score-box">
+<div class="extra-score-title">🎊 Event Highlights</div>
+<div class="extra-score-row">🏆 <strong>Champion</strong><span class="score-high">Adventure</span></div>
+<div class="extra-score-row">🥈 <strong>Runner-Up</strong><span class="score-mid">Fantasy</span></div>
+<div class="extra-score-row">🥉 <strong>Third Place</strong><span class="score-low">Toystory</span></div>
+<div class="extra-score-row">🎖️ <strong>Joint Fourth</strong><span class="score-low">Main Street &amp; Mystic Point</span></div>
 </div>
-
-<div id="historyModal" class="modal-overlay"><div class="modal"><div class="modal-header"><div><h2 id="modalTitle" class="modal-title">House History</h2><div id="modalSubtitle" class="modal-subtitle"></div></div><button class="modal-close" onclick="closeHistoryModal()" aria-label="Close">×</button></div><div class="modal-body"><div id="historyList" class="history-list"></div></div></div></div>
-
+</div>
+</section>
+<section class="main"><div><div class="card" style="margin-bottom:18px"><h3>🥇 Podium</h3><div class="muted">Top three houses in spotlight view</div><div class="podium" id="podium"></div></div><div class="card"><h3>📊 Leaderboard Ranking</h3><div class="muted">Click any house to view its full submission history</div><div class="ranking-list" id="ranking"></div></div></div><div><div class="card"><h3>📝 Recent Submissions</h3><div class="muted">Latest activities added to the scoreboard</div><div class="side-list" id="recentSubmissions"></div></div><div class="card rules-card"><h3>📌 House Rules</h3><div class="muted">Important scoring guidance</div><ol class="rules" id="rules"></ol></div><div class="card notes-card"><h3>ℹ️ Scoring Notes</h3><div class="submission-meta">Ice breaking game score uses the participant count as the score value.<br/><br/>Theme activity score adds the value inside brackets from the participant and executive score fields.</div></div></div></section>
+<div class="footer-note">If the ranking does not change immediately after a manual JSON update, wait for the next refresh and sync.</div>
+</div>
+<div class="modal-overlay" id="historyModal"><div class="modal"><div class="modal-header"><div><h2 class="modal-title" id="modalTitle">House History</h2><div class="modal-subtitle" id="modalSubtitle"></div></div><button aria-label="Close" class="modal-close" onclick="closeHistoryModal()">×</button></div><div class="modal-body"><div class="history-list" id="historyList"></div></div></div></div>
 <script>
 const DATA_URL='./data.json'; let fullData=null;
 const esc=v=>String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
