@@ -37,34 +37,48 @@
     .extra-score-row{display:flex;align-items:center;gap:6px;font-size:13px;line-height:1.8;color:#374151}
     .extra-score-row strong{flex:1;color:#111827}.extra-score-row span{font-weight:900}
     .score-high{color:#065f46}.score-mid{color:#2563eb}.score-low{color:#6b7280}
+
+/* Christmas theme overrides */
+.countdown-card{background:#fff7ed;border-color:#ef4444}.count-number{color:#b91c1c}.theme-guide-card{background:#f0fdf4;border-color:#22c55e}.guide-chip{background:#dcfce7;border-color:#86efac}.guide-chip strong{color:#166534}.guide-note{background:#fef2f2;border-color:#fca5a5;color:#991b1b}.battle-card{background:#eff6ff;border-color:#60a5fa}.battle-title{color:#1d4ed8}.battle-results-compact{border-color:#bfdbfe}.battle-thanks{background:#f0fdf4;border-color:#86efac;color:#166534}
 </style>
 </head>
 <body>
 <div class="container">
-<section class="hero"><div><div class="chip">🏆 House of Connect • Live Scoreboard</div><h1>FAS+ House of Connect Leaderboard</h1><div class="sub">Live ranking, house standings, Halloween challenge updates, and Halloween House Battle results. Click any house in the ranking to view its submission history.</div></div><div class="updated"><div class="updated-label">Last updated</div><div class="updated-value" id="lastUpdated">Loading...</div></div></section>
+<section class="hero"><div><div class="chip">🏆 House of Connect • Live Scoreboard</div><h1>FAS+ House of Connect Leaderboard</h1><div class="sub">Live ranking, house standings, Christmas challenge updates, and December House Battle news. Click any house in the ranking to view its submission history.</div></div><div class="updated"><div class="updated-label">Last updated</div><div class="updated-value" id="lastUpdated">Loading...</div></div></section>
 <section class="top-banner">
-<div class="card countdown-card"><div class="banner-title">⏳ Countdown</div><div class="banner-desc"><strong>Halloween Theme</strong> runs from September to October. Countdown to the submission deadline on <strong>Oct 31</strong>.</div><div class="countdown-grid"><div class="count-box"><div class="count-number" id="days">--</div><div class="count-label">Days</div></div><div class="count-box"><div class="count-number" id="hours">--</div><div class="count-label">Hours</div></div><div class="count-box"><div class="count-number" id="minutes">--</div><div class="count-label">Min</div></div><div class="count-box"><div class="count-number" id="seconds">--</div><div class="count-label">Sec</div></div></div></div>
-<div class="card theme-guide-card"><div class="banner-title">🎃 Halloween Activities Guide</div><div class="banner-desc">Pick one Halloween idea and submit photo or video proof.</div><div class="guide-mini"><div class="guide-chip"><strong>Halloween-Lunch</strong>Eat together as a House + include Halloween + group photo</div><div class="guide-chip"><strong>Halloween-Game</strong>Simple game + Halloween + photo or short video</div><div class="guide-chip"><strong>Halloween-Move</strong>Walk, stretch, or exercise together + group selfie</div><div class="guide-chip"><strong>Halloween-Look</strong>Dress up with a Halloween element + group photo</div><div class="guide-chip"><strong>Halloween Artwork</strong>Create artwork together + Halloween elements + artwork photo</div><div class="guide-chip"><strong>Halloween-Any</strong>Any activity your House can think of + group photo</div></div><div class="guide-note">Reminder: Assign one House member to submit after the activity is completed.</div></div>
+<div class="card countdown-card">
+<div class="banner-title">🎄 Countdown</div>
+<div class="banner-desc"><strong>Christmas Theme</strong> is here! Countdown to the <strong>winner announcement on Dec 16</strong>.</div>
+<div class="countdown-grid">
+<div class="count-box"><div class="count-number" id="days">--</div><div class="count-label">Days</div></div>
+<div class="count-box"><div class="count-number" id="hours">--</div><div class="count-label">Hours</div></div>
+<div class="count-box"><div class="count-number" id="minutes">--</div><div class="count-label">Min</div></div>
+<div class="count-box"><div class="count-number" id="seconds">--</div><div class="count-label">Sec</div></div>
+</div>
+</div>
+<div class="card theme-guide-card">
+<div class="banner-title">🎄 Christmas Activities Guide</div>
+<div class="banner-desc">Pick one Christmas idea and submit photo or video proof.</div>
+<div class="guide-mini">
+<div class="guide-chip"><strong>Christmas-Lunch</strong>Eat together as a House + include Christmas + group photo</div>
+<div class="guide-chip"><strong>Christmas-Game</strong>Simple game + Christmas + photo or short video</div>
+<div class="guide-chip"><strong>Christmas-Move</strong>Walk, stretch, or exercise together + festive group selfie</div>
+<div class="guide-chip"><strong>Christmas-Look</strong>Dress up with a Christmas element + group photo</div>
+<div class="guide-chip"><strong>Christmas Artwork</strong>Create artwork together + Christmas elements + artwork photo</div>
+<div class="guide-chip"><strong>Christmas-Any</strong>Any festive activity your House can think of + group photo</div>
+</div>
+<div class="guide-note">Reminder: Assign one House member to submit after the activity is completed.</div>
+</div>
 <div class="card battle-card">
-<div class="banner-title">🏆 Halloween House Battle Results</div>
-<div class="battle-title">Congratulations to All Houses! 🎉</div>
-<div class="battle-desc">Thank you to all Houses for participating in the Halloween House Battle and making the event a success.</div>
+<div class="banner-title">⚔️ December House Battle</div>
+<div class="battle-title">Coming Soon! 🎁</div>
+<div class="battle-desc">A new House Battle is coming in December. Get your House ready for the next challenge and another chance to earn points!</div>
 <div class="battle-results-compact">
-<div class="battle-row battle-gold">🥇 <strong>House of Adventure</strong><span>+20</span></div>
-<div class="battle-row battle-silver">🥈 <strong>House of Fantasy</strong><span>+15</span></div>
-<div class="battle-row battle-bronze">🥉 <strong>House of Toystory</strong><span>+10</span></div>
-<div class="battle-row battle-fourth">🎖️ <strong>House of Main Street</strong><span>+5</span></div>
-<div class="battle-row battle-fourth">🎖️ <strong>House of Mystic Point</strong><span>+5</span></div>
+<div class="battle-row" style="background:#f0fdf4"><strong>🎄 Theme</strong><span>Christmas</span></div>
+<div class="battle-row" style="background:#eff6ff"><strong>🏆 Challenge</strong><span>Coming Soon</span></div>
+<div class="battle-row" style="background:#fff7ed"><strong>📣 More Details</strong><span>Stay Tuned</span></div>
 </div>
-<div class="battle-thanks">🎃 Halloween House Battle Complete</div>
-<div class="results-divider"></div>
-<div class="extra-score-box">
-<div class="extra-score-title">🎊 Event Highlights</div>
-<div class="extra-score-row">🏆 <strong>Champion</strong><span class="score-high">Adventure</span></div>
-<div class="extra-score-row">🥈 <strong>Runner-Up</strong><span class="score-mid">Fantasy</span></div>
-<div class="extra-score-row">🥉 <strong>Third Place</strong><span class="score-low">Toystory</span></div>
-<div class="extra-score-row">🎖️ <strong>Joint Fourth</strong><span class="score-low">Main Street &amp; Mystic Point</span></div>
-</div>
+<div class="battle-thanks">✨ Gather your House and get ready for December!</div>
 </div>
 </section>
 <section class="main"><div><div class="card" style="margin-bottom:18px"><h3>🥇 Podium</h3><div class="muted">Top three houses in spotlight view</div><div class="podium" id="podium"></div></div><div class="card"><h3>📊 Leaderboard Ranking</h3><div class="muted">Click any house to view its full submission history</div><div class="ranking-list" id="ranking"></div></div></div><div><div class="card"><h3>📝 Recent Submissions</h3><div class="muted">Latest activities added to the scoreboard</div><div class="side-list" id="recentSubmissions"></div></div><div class="card rules-card"><h3>📌 House Rules</h3><div class="muted">Important scoring guidance</div><ol class="rules" id="rules"></ol></div><div class="card notes-card"><h3>ℹ️ Scoring Notes</h3><div class="submission-meta">Ice breaking game score uses the participant count as the score value.<br/><br/>Theme activity score adds the value inside brackets from the participant and executive score fields.</div></div></div></section>
@@ -81,7 +95,7 @@ function openHouseHistory(name){if(!fullData)return;const h=(fullData.houses||[]
 function closeHistoryModal(){document.getElementById('historyModal').classList.remove('show')}
 document.getElementById('historyModal').addEventListener('click',e=>{if(e.target.id==='historyModal')closeHistoryModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeHistoryModal()});
 function render(d){fullData=d;const r=rankHouses(d.houses||[]),m=Math.max(...r.map(h=>Number(h.score||0)),1);document.getElementById('lastUpdated').textContent=d.lastUpdated||new Date().toLocaleString();document.getElementById('podium').innerHTML=[r[1],r[0],r[2]].filter(Boolean).map((h,i)=>podiumCard(h,[2,1,3][i])).join('');const ranking=document.getElementById('ranking');ranking.innerHTML='';r.forEach(h=>{const el=document.createElement('div');el.className='rank-item';el.style.borderLeft=`6px solid ${h.color||'#94a3b8'}`;el.innerHTML=`<div class="rank-top"><div class="rank-num">${h.rank}</div><div class="house-dot" style="background:${h.color||'#94a3b8'}"></div><div class="house-meta"><div class="house-name">${esc(h.name)}</div><div class="house-short">Click to view submission history</div></div><div class="points"><strong>${Number(h.score||0)}</strong><div class="muted">points</div></div></div><div class="bar"><div style="width:${Math.max(10,Math.round(Number(h.score||0)/m*100))}%;background:${h.color||'#94a3b8'}"></div></div>`;el.onclick=()=>openHouseHistory(h.name);ranking.appendChild(el)});document.getElementById('recentSubmissions').innerHTML=(d.recentSubmissions||[]).map(x=>{const c=(d.houses||[]).find(h=>h.name===x.house)?.color||'#94a3b8';return `<div class="submission" style="border-left:6px solid ${c}"><div><div class="submission-title">${esc(x.house)}</div><div class="submission-meta">${esc(x.activity||'')}<br>Submitted by ${esc(x.by||'—')}</div></div><div class="plus">+${Number(x.points||0)}</div></div>`}).join('');document.getElementById('rules').innerHTML=(d.houseRules||[]).map(x=>`<li>${esc(x)}</li>`).join('')}
-function updateCountdown(){const dist=new Date('2026-10-31T23:59:59+08:00').getTime()-Date.now(),ids=['days','hours','minutes','seconds'];if(dist<=0){ids.forEach(id=>document.getElementById(id).textContent='0');return}document.getElementById('days').textContent=Math.floor(dist/86400000);document.getElementById('hours').textContent=Math.floor(dist%86400000/3600000);document.getElementById('minutes').textContent=Math.floor(dist%3600000/60000);document.getElementById('seconds').textContent=Math.floor(dist%60000/1000)}
+function updateCountdown(){const dist=new Date('2026-12-16T23:59:59+08:00').getTime()-Date.now(),ids=['days','hours','minutes','seconds'];if(dist<=0){ids.forEach(id=>document.getElementById(id).textContent='0');return}document.getElementById('days').textContent=Math.floor(dist/86400000);document.getElementById('hours').textContent=Math.floor(dist%86400000/3600000);document.getElementById('minutes').textContent=Math.floor(dist%3600000/60000);document.getElementById('seconds').textContent=Math.floor(dist%60000/1000)}
 async function loadData(){try{const res=await fetch(`${DATA_URL}?t=${Date.now()}`,{cache:'no-store'});if(!res.ok)throw new Error(`Failed to load data.json: ${res.status}`);render(await res.json())}catch(e){console.error(e);document.getElementById('lastUpdated').textContent='Check data.json path'}}
 loadData();updateCountdown();setInterval(loadData,30000);setInterval(updateCountdown,1000);
 </script>
