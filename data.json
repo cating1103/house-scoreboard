@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-10-22 16:28 HKT",
+  "lastUpdated": "2026-11-09 10:33 HKT",
   "houses": [
     {
       "name": "House of Fantasy",
-      "score": 190,
+      "score": 200,
       "color": "#8b5cf6"
     },
     {
@@ -44,6 +44,12 @@
   ],
   "recentSubmissions": [
     {
+      "house": "House of Fantasy",
+      "points": 10,
+      "activity": "Halloween x Ella Cheng’s 25th anniversary",
+      "by": "Nelson Wong"
+    },
+    {
       "house": "House of Toystory",
       "points": 10,
       "activity": "house battle 3rd - 10 points",
@@ -72,15 +78,15 @@
       "points": 20,
       "activity": "house battle 1st -20 points",
       "by": "Tiffany Tsang"
-    },
-    {
-      "house": "House of Fantasy",
-      "points": 5,
-      "activity": "House of Battle Team Lunch",
-      "by": "Nelson Wong"
     }
   ],
   "allSubmissions": [
+    {
+      "house": "House of Fantasy",
+      "points": 10,
+      "activity": "Halloween x Ella Cheng’s 25th anniversary",
+      "by": "Nelson Wong"
+    },
     {
       "house": "House of Toystory",
       "points": 10,
